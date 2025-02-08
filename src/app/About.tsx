@@ -62,7 +62,7 @@ export const About = ({ disableAnimations, isMobile, aboutRef, pic }: { disableA
   return <div ref={aboutRef} className={isMobile ? styles.aboutMobile : styles.about}>
     <div ref={textRef} className={isMobile ? styles.abouttextMobile : styles.abouttext}>
     {isMobile && 
-        <GutsPoster isMobile={isMobile} pic={pic} />
+        <GutsPoster isMobile={isMobile} pic={"titlethumb.avif"} />
 
     }
 
@@ -77,9 +77,11 @@ export const About = ({ disableAnimations, isMobile, aboutRef, pic }: { disableA
      
     </div>
     {!isMobile && 
-        <GutsPoster isMobile={isMobile} pic={pic} />
+        <GutsPoster isMobile={isMobile} pic={"titlethumb.avif"} />
 
     }
+
+
 
 
   </div>
@@ -107,7 +109,7 @@ export const GutsPoster = React.memo(({ isMobile, pic }: { isMobile: boolean, pi
     }} className={isMobile ? styles.posterContainerMobile : styles.posterContainer}>
       <div className={styles.poster} >
 
-        <img className={isMobile ? styles.posterImageMobile : styles.posterImage} src={isMobile ?  "titlethumb.avif" : "poster.png"} />
+        <img className={isMobile ? styles.posterImageMobile : styles.posterImage} src={pic} />
         {/* <img className={styles.posterJane} style={{ opacity: posterNumber === "1.png" ? 1 : 0 }} src={"/guts/1.png"} />
         <img className={styles.posterJane} style={{ opacity: posterNumber === "2.png" ? 1 : 0 }} src={"/guts/2.png"} />
         <img className={styles.posterJane} style={{ opacity: posterNumber === "3.png" ? 1 : 0 }} src={"/guts/3.png"} />

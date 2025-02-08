@@ -202,6 +202,13 @@ export default function Guts() {
           <Landing landingRef={homeRef} disableAnimations={prefersReducedMotion}  />
         }
         <About disableAnimations={prefersReducedMotion} aboutRef={aboutRef} isMobile={isMobile} pic={currentPosterPic} />
+        {isMobile && 
+        <div style={{alignItems: "flex-end", display: "flex", paddingTop: 50, width: "100%"}}>
+                <img  style={{width: "50%"}} src="poster.png" />
+                </div>
+
+        }
+        <img style={{ padding: "50px 0px", width: "100%"}} src="selections.jpg" />
         {/* <Stills disableAnimations={prefersReducedMotion} stillsRef={stillsRef} isMobile={isMobile} imagesRow1={STILLS_ROW_1} imagesRow2={STILLS_ROW_2} /> */}
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
         {/* <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} /> */}

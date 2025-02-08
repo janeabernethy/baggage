@@ -295,15 +295,15 @@
   }
   
   .aboutSectionMobile {
-    padding-top: 25px;
+    padding: 0 25px;
   }
   
   .abouttextMobile {
     flex-grow: 1;
     flex-direction: column;
     display: flex;
-    padding-right: 25px;
-    padding-left: 25px;
+    /* padding-right: 25px;
+    padding-left: 25px; */
     gap: 25px;
     justify-content: center;
   }
