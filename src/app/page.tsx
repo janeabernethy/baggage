@@ -21,8 +21,8 @@ const BTS_ROW_2 = ["/guts/bts6.jpg", "/guts/bts5.jpg", "/guts/bts1.jpg", "/guts/
 
 export default function Guts() {
   const screenHeight = React.useRef<number>(0);
-  const [totalHeight, setTotalHeight]=  React.useState(0);
-  const width =  React.useRef<number>(0);
+  const [totalHeight, setTotalHeight] = React.useState(0);
+  const width = React.useRef<number>(0);
   const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
 
   const [currentPosterPic, setCurrentPosterPic] = React.useState("1.png");
@@ -38,26 +38,26 @@ export default function Guts() {
   const crewRef = React.useRef<HTMLDivElement>(null);
   const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(false);
 
-    React.useEffect(() => {
-      const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-  
-      const handleChange = () => {
+  React.useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-        setPrefersReducedMotion(mediaQuery.matches);
-      };
-  
-  
+    const handleChange = () => {
 
       setPrefersReducedMotion(mediaQuery.matches);
-  
-  
-      mediaQuery.addEventListener("change", handleChange);
-  
-      return () => {
-        mediaQuery.removeEventListener("change", handleChange);
-      };
-    }, []);
-  
+    };
+
+
+
+    setPrefersReducedMotion(mediaQuery.matches);
+
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleChange);
+    };
+  }, []);
+
 
 
 
@@ -111,7 +111,7 @@ export default function Guts() {
 
   const scrollToSection = (section: number) => {
     setCurrentSection(section);
-    const scrollBehaviour : ScrollIntoViewOptions | boolean = prefersReducedMotion ? false : { behavior: 'smooth' };
+    const scrollBehaviour: ScrollIntoViewOptions | boolean = prefersReducedMotion ? false : { behavior: 'smooth' };
     if (section === 0) {
       homeRef.current?.scrollIntoView(scrollBehaviour)
     }
@@ -153,10 +153,10 @@ export default function Guts() {
     const scrollOffset = window.scrollY
     const scrollPercentage = scrollOffset / screenHeight.current
 
-    if(!prefersReducedMotion) {
+    if (!prefersReducedMotion) {
       // changeBackgroundColor(scrollPercentage);
     }
-   
+
     const min = isMobile === true ? 0.0 : 1.15
     const max = isMobile === true ? 0.7 : 1.7;
     if (scrollPercentage > min && scrollPercentage < max) {
@@ -199,20 +199,20 @@ export default function Guts() {
       }
       <div className={styles.content}>
         {!isMobile &&
-          <Landing landingRef={homeRef} disableAnimations={prefersReducedMotion}  />
+          <Landing landingRef={homeRef} disableAnimations={prefersReducedMotion} />
         }
         <About disableAnimations={prefersReducedMotion} aboutRef={aboutRef} isMobile={isMobile} pic={currentPosterPic} />
-        {isMobile && 
-        <div style={{alignItems: "flex-end", display: "flex", paddingTop: 50, width: "100%"}}>
-                <img  style={{width: "50%"}} src="poster.png" />
-                </div>
+        {isMobile &&
+          <div style={{ alignItems: "flex-end", display: "flex", paddingTop: 50, width: "100%" }}>
+            <img style={{ width: "100%" }} src="poster.png" />
+          </div>
 
         }
-        <img style={{ padding: "50px 0px", width: "100%"}} src="selections.jpg" />
+        <img style={{ padding: "50px 0px", width: "100%" }} src="selections.jpg" />
         {/* <Stills disableAnimations={prefersReducedMotion} stillsRef={stillsRef} isMobile={isMobile} imagesRow1={STILLS_ROW_1} imagesRow2={STILLS_ROW_2} /> */}
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
         {/* <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} /> */}
-        <Crew  disableAnimations={prefersReducedMotion} crewRef={crewRef} height={screenHeight.current} isMobile={isMobile} />
+        <Crew disableAnimations={prefersReducedMotion} crewRef={crewRef} height={screenHeight.current} isMobile={isMobile} />
         <Footer />
       </div>
 
