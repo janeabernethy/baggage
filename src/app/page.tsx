@@ -202,9 +202,9 @@ export default function Guts() {
           <Landing landingRef={homeRef} disableAnimations={prefersReducedMotion}  />
         }
         <About disableAnimations={prefersReducedMotion} aboutRef={aboutRef} isMobile={isMobile} pic={currentPosterPic} />
-        <Stills disableAnimations={prefersReducedMotion} stillsRef={stillsRef} isMobile={isMobile} imagesRow1={STILLS_ROW_1} imagesRow2={STILLS_ROW_2} />
+        {/* <Stills disableAnimations={prefersReducedMotion} stillsRef={stillsRef} isMobile={isMobile} imagesRow1={STILLS_ROW_1} imagesRow2={STILLS_ROW_2} /> */}
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
-        <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
+        {/* <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} /> */}
         <Crew  disableAnimations={prefersReducedMotion} crewRef={crewRef} height={screenHeight.current} isMobile={isMobile} />
         <Footer />
       </div>
