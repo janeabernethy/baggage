@@ -95,7 +95,7 @@
   }
   
   .selectionOuter {
-    height: 150vh;
+    height: 100%;
     padding-bottom: 50px;
     position: relative;
     opacity: 0;
@@ -120,8 +120,6 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    top: 25%;
-    position: absolute;
   }
   
   .selectionHeaderMobile {
@@ -174,15 +172,15 @@
   }
   
   .selectionContainer {
-    position: absolute;
-    top: 50%;
-    align-items: center;
-    justify-content: center;
+
     width: 100%;
-    gap: 25px;
-    grid-template-columns: 1fr 1fr 1fr;
-    display: grid
-;
+    height: calc(100% - 60px);
+    /* grid-column-gap: px; */
+    grid-row-gap: 12.5px;
+    padding: 50px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    box-sizing: border-box;
   }
   
   .selectionContainerMobile {
@@ -190,7 +188,6 @@
     grid-template-columns: 1fr 1fr;
     padding: 0 25px;
     width: 100%;
-   
     gap: 25px;
 
   }
@@ -470,6 +467,7 @@
     font-size: larger;
     background-clip: text;
     color: black;
+    text-align: center;
     /* color: transparent;
     background-image: linear-gradient(120deg, red, hotpink); */
   
@@ -579,7 +577,33 @@
     color: rgb(94,93,93);
   }
 
+  .supportedBy {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    gap: 25px;
+  }
 
+  .supportedByMobile {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    gap: 25px;
+    flex-direction: column;
+  }
+  .supportedByContainer {
+    display: flex;
+   gap: 25px;
+   flex-direction: column;
+  }
+
+  .supportImgContainer {
+    height: 100px;
+  }
+  .supportImg {
+    height: 100%;
+    /* height: 200px; */
+  }
   .link {
     text-decoration: none;
     color: rgb(94,93,93);

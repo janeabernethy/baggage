@@ -14,10 +14,10 @@ import { Selections } from './Selections';
 import { Stills } from './Stills';
 
 import { mapValueGrowing } from './mathHelpers';
-const STILLS_ROW_1 = ["/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg", "/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg"]
-const STILLS_ROW_2 = ["/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg", "/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg"]
-const BTS_ROW_1 = ["/bts/11.jpg", "/bts/12.jpg", "/bts/13.jpg", "/bts/14.jpg", "/bts/15.jpg", "/bts/16.jpg", "/bts/17.jpg", "/bts/18.jpg", "/bts/19.jpg", "/bts/11.jpg"]
-const BTS_ROW_2 =["/bts/19.jpg", "/bts/18.jpg", "/bts/17.jpg", "/bts/16.jpg", "/bts/15.jpg", "/bts/14.jpg", "/bts/13.jpg", "/bts/12.jpg", "/bts/11.jpg", "/bts/10.jpg"]
+const BTS_ROW_1 = ["/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg", "/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg"]
+const BTS_ROW_2 = ["/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg", "/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg"]
+const STILLS_ROW_1 = ["/bts/11.jpg", "/bts/12.jpg", "/bts/13.jpg", "/bts/14.jpg", "/bts/15.jpg", "/bts/16.jpg", "/bts/17.jpg", "/bts/18.jpg", "/bts/19.jpg", "/bts/11.jpg"]
+const STILLS_ROW_2 =["/bts/19.jpg", "/bts/18.jpg", "/bts/17.jpg", "/bts/16.jpg", "/bts/15.jpg", "/bts/14.jpg", "/bts/13.jpg", "/bts/12.jpg", "/bts/11.jpg", "/bts/10.jpg"]
 
 export default function Guts() {
   const screenHeight = React.useRef<number>(0);
@@ -207,7 +207,7 @@ export default function Guts() {
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
         <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
         <Crew disableAnimations={prefersReducedMotion} crewRef={crewRef} height={screenHeight.current} isMobile={isMobile} />
-        <Footer />
+        {/* <Footer /> */}
       </div>
 
     </div>

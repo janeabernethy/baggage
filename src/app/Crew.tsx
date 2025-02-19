@@ -13,15 +13,15 @@ const GSAP_DURATION = 0.5;
 const GSAP_TOGGLE_ACTIONS = 'play none none reset';
 
 
-export const Crew = React.memo(({ disableAnimations, crewRef, height, isMobile }: { disableAnimations: boolean, crewRef: React.RefObject<HTMLDivElement|null>, height: number, isMobile: boolean }) => {
+export const Crew = React.memo(({ disableAnimations, crewRef, height, isMobile }: { disableAnimations: boolean, crewRef: React.RefObject<HTMLDivElement | null>, height: number, isMobile: boolean }) => {
     gsap.registerPlugin(ScrollTrigger);
 
 
     React.useEffect(() => {
-        
+
 
         const ctx = gsap.context(() => {
-            if(disableAnimations) {
+            if (disableAnimations) {
                 return;
             }
             if (!crewRef.current) {
@@ -54,9 +54,8 @@ export const Crew = React.memo(({ disableAnimations, crewRef, height, isMobile }
     return <div ref={crewRef} className={isMobile ? styles.crewMobile : styles.crew}>
         <FilmByLucy disableAnimations={disableAnimations} isMobile={isMobile} />
         <CoreCrew disableAnimations={disableAnimations} isMobile={isMobile} />
-        {/* <CoreCrew2 disableAnimations={disableAnimations} isMobile={isMobile} /> */}
-        {/* <Tutors disableAnimations={disableAnimations} isMobile={isMobile} /> */}
-        {/* <TechSupport disableAnimations={disableAnimations} isMobile={isMobile} /> */}
+        <Cast disableAnimations={disableAnimations} isMobile={isMobile} />
+        <CoreCrew2 disableAnimations={disableAnimations} isMobile={isMobile} />
         <SpecialThanks disableAnimations={disableAnimations} isMobile={isMobile} />
     </div>
 });
@@ -69,7 +68,7 @@ const FilmByLucy = React.memo(({ disableAnimations, isMobile }: { disableAnimati
         if (!isMobile) {
             return
         }
-        if(disableAnimations) {
+        if (disableAnimations) {
             return
         }
         const ctx = gsap.context(() => {
@@ -115,7 +114,7 @@ type CrewSection = {
     names: string[],
 }
 
-const CrewSection = React.memo(({  disableAnimations, isMobile, sections, mobileImg }: { disableAnimations: boolean, isMobile: boolean, sections: CrewSection[], mobileImg: string }) => {
+const CrewSection = React.memo(({ disableAnimations, isMobile, sections, mobileImg }: { disableAnimations: boolean, isMobile: boolean, sections: CrewSection[], mobileImg: string }) => {
     const containerRef = React.useRef<HTMLDivElement>(null);
     return (
         <div className={styles.crewContent3}>
@@ -132,22 +131,32 @@ const CrewSection = React.memo(({  disableAnimations, isMobile, sections, mobile
                         </div>
                     )
                 })}
-                <CrewPic disableAnimations={disableAnimations} src={mobileImg} isMobile={isMobile}/>
+                <CrewPic disableAnimations={disableAnimations} src={mobileImg} isMobile={isMobile} />
             </div>
 
         </div>)
 });
 
-const CoreCrew = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
+const Cast = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
     const crewSections: CrewSection[] = [
-        { header: "Director / Animator / Writer", names: ["Lucy Davidson"] },
-        { header: "Producers", names: ["Vanessa Batten", "Amy Upchurch"] },
-        // { header: "Executive Producers", names: ["Mark Simon Hewis", "Stuart Messinger", "Vanessa Batten", "Rachel Plant"] },
-        { header: "Cinematography", names: ["George Milburn"] }
+        { header: "Cast", names: ["Eve Eloise Gilbert", "Sophie Schoorman", "Dominik Shields"] },
     ];
     return (
         <div className={styles.crewContent3} >
-            <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} mobileImg={"/guts/jodie.jpg"} sections={crewSections} />
+            <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} mobileImg={"/credits/cast.jpg"} sections={crewSections} />
+        </div>
+    )
+})
+
+
+const CoreCrew = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
+    const crewSections: CrewSection[] = [
+        { header: "Director / Animator / Writer", names: ["Lucy Davidson"] },
+
+    ];
+    return (
+        <div className={styles.crewContent3} >
+            <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} mobileImg={"/credits/1.jpg"} sections={crewSections} />
         </div>
     )
 })
@@ -157,18 +166,17 @@ const CoreCrew2 = React.memo(({ disableAnimations, isMobile }: { disableAnimatio
     const containerRef = React.useRef<HTMLDivElement>(null);
 
     const crewSections: CrewSection[] = [
-        { header: "Set Contruction", names: ["Tom Sewell", "George Milburn"] },
-        { header: "Editing", names: ["Dan Williamson", "Megan McGregor", "Mark Simon Hewis"] },
-        { header: "Rigging", names: ["Rich Modlen"] },
-        { header: "Camera", names: ["Adam Cook"] },
-        { header: "Dubbing Mixer", names: ["Will Davies"] },
-        { header: "Color Grade", names: ["Carla Oliver Marti"] },
+        { header: "Producers", names: ["Vanessa Batten"] },
+        { header: "Music", names: ["Alex Olijnyk"] },
+        { header: "Cinematography", names: ["George Milburn"] },
+
+        { header: "Editing", names: ["Dan Williamson"] }
     ];
 
     return (
         <div className={styles.crewContent3} >
             <div ref={containerRef} className={styles.crewCol}>
-                <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} mobileImg={"/guts/dave.jpg"} sections={crewSections} />
+                <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} mobileImg={"/credits/2.jpg"} sections={crewSections} />
 
             </div>
         </div>
@@ -221,46 +229,44 @@ const TechSupport = React.memo(({ disableAnimations, isMobile }: { disableAnimat
 
 const SpecialThanks = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
 
-    const crewSections: CrewSection[] = [
-        {
-            header: "Special Thanks",
-            names: [
-                // "Rose Whelan",
-                // "Peter Lord",
-                // "Dave Sproxton",
-                // "Rich Webber",
-                // "Joseph Wallace",
-                // "Chesley Cannon",
-                // "Karin Csernohorski",
-                // "Lucy Davidson",
-                // "Jelle Jensen",
-                // "Laura Lago",
-                // "Dilgan Moczar",
-                // "Reem Moczar",
-                // "Marco Russo",
-                // "Camillo Sansi",
-                // "Tortor Smith",
-                // "Lily Ward",
-                // "Leo Wright",
-            ]
-        },
-
-    ];
+   
 
     return (
-        <div className={styles.crewContent3}>
-            <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} mobileImg={"/guts/issm2.jpg"} sections={crewSections} />
+        <div className={styles.crewContent3} style={{padding: "50px 0px"}}>
+            <div className={styles.crewHeader} style={{paddingBottom: 25}}>Supported By</div>
+            <div className={styles.supportedByContainer}>
+            <div className={isMobile ? styles.supportedByMobile : styles.supportedBy}>
+               <SupportImg imgName="/supportedBy/aard.jpg" alt="Aardman" />
+               <SupportImg imgName="/supportedBy/IPCF.png" alt="Ian Potter Culteral Trust" />
+
+               <SupportImg imgName="/supportedBy/vicscreen.jpg" alt="Vic Screen" />
+
+
+      
+              <SupportImg imgName="/supportedBy/HAB.jpg" alt="Hunt and Brew" />
+               <SupportImg imgName="/supportedBy/SA.jpg" alt="Screen Australia" />
+
+
+            </div>
+            </div>
+
         </div>
     )
 });
 
+const SupportImg = React.memo(({imgName, alt} : {imgName: string, alt: string}) => {
+    return ( <div className={styles.supportImgContainer }>
+        <img className={styles.supportImg} src={imgName} alt={alt} />
+    </div>)
+})
 
-const CrewPic = ({ disableAnimations, src, isMobile }: {disableAnimations: boolean, src: string, isMobile: boolean }) => {
+
+const CrewPic = ({ disableAnimations, src, isMobile }: { disableAnimations: boolean, src: string, isMobile: boolean }) => {
     const containerRef = React.useRef<HTMLDivElement>(null);
 
     React.useEffect(() => {
         const ctx = gsap.context(() => {
-            if(disableAnimations) {
+            if (disableAnimations) {
                 return;
             }
             if (!containerRef.current) {

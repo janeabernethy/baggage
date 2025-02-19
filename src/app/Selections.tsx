@@ -59,11 +59,11 @@ export const Selections = React.memo(({ disableAnimations, isMobile, selectionRe
 
   return (
     <div ref={selectionRef} className={isMobile ? styles.selectionOuterMobile : styles.selectionOuter} style={{ opacity: 1 }}>
-      <div className={isMobile ? styles.selectionHeaderMobile : styles.selectionHeader} style={{}}>
+      {isMobile && <div className={isMobile ? styles.selectionHeaderMobile : styles.selectionHeader} style={{}}>
         <div className={isMobile ? styles.selectionHeaderTextMobile : styles.selectionHeaderText}>
           Selections
         </div>
-      </div>
+      </div>}
       <div ref={selectionImgsRef} className={isMobile ? styles.selectionContainerMobile : styles.selectionContainer}>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
           <img className={styles.selectionImage} src="/laurels/sxsw.png" />
