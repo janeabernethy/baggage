@@ -13,7 +13,6 @@ import { Menu } from './Menu';
 import { Selections } from './Selections';
 import { Stills } from './Stills';
 
-import { mapValueGrowing } from './mathHelpers';
 const BTS_ROW_1 = ["/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg", "/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg"]
 const BTS_ROW_2 = ["/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg", "/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg"]
 const STILLS_ROW_1 = ["/bts/11.jpg", "/bts/12.jpg", "/bts/13.jpg", "/bts/14.jpg", "/bts/15.jpg", "/bts/16.jpg", "/bts/17.jpg", "/bts/18.jpg", "/bts/19.jpg", "/bts/11.jpg"]
@@ -25,7 +24,6 @@ export default function Guts() {
   const width = React.useRef<number>(0);
   const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
 
-  const [currentPosterPic, setCurrentPosterPic] = React.useState("1.png");
   const [backgroundColor, setBackgroundColor] = React.useState("white");
   const [currentSection, setCurrentSection] = React.useState(0);
 
@@ -131,19 +129,6 @@ export default function Guts() {
     const scrollOffset = window.scrollY
     const scrollPercentage = scrollOffset / screenHeight.current
 
-    if (!prefersReducedMotion) {
-      // changeBackgroundColor(scrollPercentage);
-    }
-
-    const min = isMobile === true ? 0.0 : 1.15
-    const max = isMobile === true ? 0.7 : 1.7;
-    if (scrollPercentage > min && scrollPercentage < max) {
-      const i = (mapValueGrowing(scrollPercentage, min, max) * 10 + 1) / 2
-      setCurrentPosterPic(`${i.toFixed(0)}.png`);
-    }
-    else {
-      setCurrentPosterPic(`1.png`);
-    }
 
 
 
@@ -179,7 +164,7 @@ export default function Guts() {
         {!isMobile &&
           <Landing landingRef={homeRef} disableAnimations={prefersReducedMotion} />
         }
-        <About disableAnimations={prefersReducedMotion} aboutRef={aboutRef} isMobile={isMobile} pic={currentPosterPic} />
+        <About aboutRef={aboutRef} isMobile={isMobile}  />
    
         <Stills disableAnimations={prefersReducedMotion} stillsRef={stillsRef} isMobile={isMobile} imagesRow1={STILLS_ROW_1} imagesRow2={STILLS_ROW_2} />
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
