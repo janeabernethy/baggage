@@ -237,7 +237,7 @@ const SpecialThanks = React.memo(({ disableAnimations, isMobile }: { disableAnim
             <div className={styles.supportedByContainer}>
             <div className={isMobile ? styles.supportedByMobile : styles.supportedBy}>
                <SupportImg imgName="/supportedBy/aard.jpg" alt="Aardman" />
-               <SupportImg imgName="/supportedBy/IPCF.png" alt="Ian Potter Culteral Trust" />
+               <SupportImg imgName="/supportedBy/IPCF.jpg" alt="Ian Potter Culteral Trust" />
 
                <SupportImg imgName="/supportedBy/vicscreen.jpg" alt="Vic Screen" />
 
