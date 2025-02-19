@@ -126,28 +126,6 @@ export default function Guts() {
     }
   }
 
-  const changeBackgroundColor = (scrollPercentage: number) => {
-    if (scrollPercentage < 0.5) {
-      setBackgroundColor("white");
-    }
-    else if (scrollPercentage < 1.5) {
-      setBackgroundColor("white");
-    }
-    else if (scrollPercentage < 2.5) {
-      setBackgroundColor("#ffd3e4")
-
-    }
-    else if (scrollPercentage < 3.5) {
-      setBackgroundColor("white")
-
-    }
-    else if (scrollPercentage < 4.5) {
-      setBackgroundColor("#ffd3e4");
-    }
-    else {
-      setBackgroundColor("white")
-    }
-  }
 
   const handleScroll = () => {
     const scrollOffset = window.scrollY

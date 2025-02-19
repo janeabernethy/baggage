@@ -92,7 +92,7 @@ export const GutsPoster = React.memo(({ isMobile, pic }: { isMobile: boolean, pi
       }, 90)
 
     }} className={isMobile ? styles.posterContainerMobile : styles.posterContainer}>
-      <div className={styles.poster} >
+      <div style={{height: isMobile ? "100%" : "auto" }}className={styles.poster} >
 
         <img className={isMobile ? styles.posterImageMobile : styles.posterImage} src={isMobile ? "Baggage-poster.png" : "poster-landscape.png"} />
         {/* <img className={styles.posterJane} style={{ opacity: posterNumber === "1.png" ? 1 : 0 }} src={"/guts/1.png"} />
