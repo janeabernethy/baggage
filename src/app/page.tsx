@@ -14,10 +14,10 @@ import { Selections } from './Selections';
 import { Stills } from './Stills';
 
 import { mapValueGrowing } from './mathHelpers';
-const STILLS_ROW_1 = ["/guts/still1.jpg", "/guts/still2.jpg", "/guts/still3.jpg", "/guts/still4.jpg", "/guts/still2.jpg", "/guts/still3.jpg", "/guts/still4.jpg", "/guts/still1.jpg", "/guts/still2.jpg", "/guts/still3.jpg"]
-const STILLS_ROW_2 = ["/guts/still3.jpg", "/guts/still4.jpg", "/guts/still1.jpg", "/guts/still2.jpg", "/guts/still3.jpg", "/guts/still1.jpg", "/guts/still2.jpg", "/guts/still3.jpg", "/guts/still4.jpg", "/guts/still2.jpg"]
-const BTS_ROW_1 = ["/guts/bts1.jpg", "/guts/bts2.jpg", "/guts/bts3.jpg", "/guts/bts4.jpg", "/guts/bts5.jpg", "/guts/bts6.jpg", "/guts/bts5.jpg", "/guts/bts1.jpg", "/guts/bts4.jpg", "/guts/bts6.jpg"]
-const BTS_ROW_2 = ["/guts/bts6.jpg", "/guts/bts5.jpg", "/guts/bts1.jpg", "/guts/bts4.jpg", "/guts/bts6.jpg", "/guts/bts1.jpg", "/guts/bts2.jpg", "/guts/bts3.jpg", "/guts/bts4.jpg", "/guts/bts5.jpg"]
+const STILLS_ROW_1 = ["/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg", "/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg"]
+const STILLS_ROW_2 = ["/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg", "/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg"]
+const BTS_ROW_1 = ["/bts/11.jpg", "/bts/12.jpg", "/bts/13.jpg", "/bts/14.jpg", "/bts/15.jpg", "/bts/16.jpg", "/bts/17.jpg", "/bts/18.jpg", "/bts/19.jpg", "/bts/11.jpg"]
+const BTS_ROW_2 =["/bts/19.jpg", "/bts/18.jpg", "/bts/17.jpg", "/bts/16.jpg", "/bts/15.jpg", "/bts/14.jpg", "/bts/13.jpg", "/bts/12.jpg", "/bts/11.jpg", "/bts/10.jpg"]
 
 export default function Guts() {
   const screenHeight = React.useRef<number>(0);
@@ -192,7 +192,7 @@ export default function Guts() {
   }
 
   return (
-    <div ref={appRef} className={styles.app} style={{ backgroundColor, height: totalHeight }} >
+    <div ref={appRef} className={styles.app} style={{ backgroundColor}} >
 
       {!isMobile &&
         <Menu currentItem={currentSection} updateCurrentSection={scrollToSection} />
@@ -202,16 +202,10 @@ export default function Guts() {
           <Landing landingRef={homeRef} disableAnimations={prefersReducedMotion} />
         }
         <About disableAnimations={prefersReducedMotion} aboutRef={aboutRef} isMobile={isMobile} pic={currentPosterPic} />
-        {isMobile &&
-          <div style={{ alignItems: "flex-end", display: "flex", paddingTop: 50, width: "100%" }}>
-            <img style={{ width: "100%" }} src="poster.png" />
-          </div>
-
-        }
-        <img style={{ padding: "50px 0px", width: "100%" }} src="selections.jpg" />
-        {/* <Stills disableAnimations={prefersReducedMotion} stillsRef={stillsRef} isMobile={isMobile} imagesRow1={STILLS_ROW_1} imagesRow2={STILLS_ROW_2} /> */}
+   
+        <Stills disableAnimations={prefersReducedMotion} stillsRef={stillsRef} isMobile={isMobile} imagesRow1={STILLS_ROW_1} imagesRow2={STILLS_ROW_2} />
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
-        {/* <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} /> */}
+        <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
         <Crew disableAnimations={prefersReducedMotion} crewRef={crewRef} height={screenHeight.current} isMobile={isMobile} />
         <Footer />
       </div>

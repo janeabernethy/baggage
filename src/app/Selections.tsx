@@ -59,31 +59,36 @@ export const Selections = React.memo(({ disableAnimations, isMobile, selectionRe
 
   return (
     <div ref={selectionRef} className={isMobile ? styles.selectionOuterMobile : styles.selectionOuter} style={{ opacity: 1 }}>
-
       <div className={isMobile ? styles.selectionHeaderMobile : styles.selectionHeader} style={{}}>
         <div className={isMobile ? styles.selectionHeaderTextMobile : styles.selectionHeaderText}>
           Selections
         </div>
       </div>
- 
       <div ref={selectionImgsRef} className={isMobile ? styles.selectionContainerMobile : styles.selectionContainer}>
-        <div onClick={() => window.open("https://liaf.org.uk/schedule/liaf-2024-british-showcase-15-filmmaker-introductions?wcs_timestamp=1732309200")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="LIAF.png" />
+        <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src="/laurels/sxsw.png" />
         </div>
- 
-      </div>
-      <div ref={selectionImgsRef} className={isMobile ? styles.selectionContainerMobile : styles.selectionContainer}>
-        <div onClick={() => window.open("https://liaf.org.uk/schedule/liaf-2024-british-showcase-15-filmmaker-introductions?wcs_timestamp=1732309200")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="LIAF.png" />
+        <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src="/laurels/liaf.png" />
         </div>
- 
-      </div>
-
-      <div ref={selectionImgsRef} className={isMobile ? styles.selectionContainerMobile : styles.selectionContainer}>
-        <div onClick={() => window.open("https://liaf.org.uk/schedule/liaf-2024-british-showcase-15-filmmaker-introductions?wcs_timestamp=1732309200")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="LIAF.png" />
+        <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src="/laurels/flickerfest.png" />
         </div>
- 
+        <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src="/laurels/flickerfest.png" />
+        </div>
+        <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src="/laurels/peninsula.png" />
+        </div>
+        <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src="/laurels/dingle.png" />
+        </div>
+        <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src="/laurels/cleveland.png" />
+        </div>
+        <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src="/laurels/biaf.png" />
+        </div>
       </div>
     </div>)
 });

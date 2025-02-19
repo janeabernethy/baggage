@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   description: "Created By Lucy Davidson",
 };
 
-export default function RootLayout({
+export default function RootLayout({  
   children,
 }: Readonly<{
   children: React.ReactNode;

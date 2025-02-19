@@ -60,29 +60,15 @@ export const About = ({ disableAnimations, isMobile, aboutRef, pic }: { disableA
   }, [isMobile]);
 
   return <div ref={aboutRef} className={isMobile ? styles.aboutMobile : styles.about}>
+    <GutsPoster isMobile={isMobile} pic={pic} />
     <div ref={textRef} className={isMobile ? styles.abouttextMobile : styles.abouttext}>
-    {isMobile && 
-        <GutsPoster isMobile={isMobile} pic={pic} />
-
-    }
-
       <div className={isMobile ? styles.aboutSectionMobile : styles.aboutSection}>
-
-        <div className={styles.aboutDesc}>
-        Three girlfriends check in their baggage at the airport, but one is carrying a little more than the others. As they travel along the conveyor belt to security, can she hide what’s inside?
-
-        </div>
-        <div className={styles.aboutDesc}>Aardman Academy Short film 2024  </div>
+      <div className={styles.aboutDesc}>
+      Three girlfriends check in their baggage at the airport, but one is carrying a little more than the others. As they travel along the conveyor belt to security, can she hide what’s inside?
       </div>
-     
     </div>
-    {!isMobile && 
-        <GutsPoster isMobile={isMobile} pic={pic} />
 
-    }
-
-
-
+  </div>
   </div>
 }
 
@@ -108,7 +94,7 @@ export const GutsPoster = React.memo(({ isMobile, pic }: { isMobile: boolean, pi
     }} className={isMobile ? styles.posterContainerMobile : styles.posterContainer}>
       <div className={styles.poster} >
 
-        <img className={isMobile ? styles.posterImageMobile : styles.posterImage} src={isMobile ?  "titlethumb.avif" : "poster.png"} />
+        <img className={isMobile ? styles.posterImageMobile : styles.posterImage} src="Baggage-poster.png" />
         {/* <img className={styles.posterJane} style={{ opacity: posterNumber === "1.png" ? 1 : 0 }} src={"/guts/1.png"} />
         <img className={styles.posterJane} style={{ opacity: posterNumber === "2.png" ? 1 : 0 }} src={"/guts/2.png"} />
         <img className={styles.posterJane} style={{ opacity: posterNumber === "3.png" ? 1 : 0 }} src={"/guts/3.png"} />
