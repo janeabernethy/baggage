@@ -94,7 +94,7 @@ export const GutsPoster = React.memo(({ isMobile, pic }: { isMobile: boolean, pi
     }} className={isMobile ? styles.posterContainerMobile : styles.posterContainer}>
       <div className={styles.poster} >
 
-        <img className={isMobile ? styles.posterImageMobile : styles.posterImage} src="Baggage-poster.png" />
+        <img className={isMobile ? styles.posterImageMobile : styles.posterImage} src={isMobile ? "Baggage-poster.png" : "poster-landscape.png"} />
         {/* <img className={styles.posterJane} style={{ opacity: posterNumber === "1.png" ? 1 : 0 }} src={"/guts/1.png"} />
         <img className={styles.posterJane} style={{ opacity: posterNumber === "2.png" ? 1 : 0 }} src={"/guts/2.png"} />
         <img className={styles.posterJane} style={{ opacity: posterNumber === "3.png" ? 1 : 0 }} src={"/guts/3.png"} />

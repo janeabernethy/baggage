@@ -284,6 +284,7 @@
   }
   
   .abouttext {
+    width: 50%;
     flex-grow: 1;
     flex-direction: column;
     display: flex;
@@ -308,11 +309,11 @@
   
   .poster {
     position: relative;
-    height: 100%;
   
   }
   
   .posterContainer {
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -333,7 +334,7 @@
   
   .posterImage {
     position: relative;
-    max-height: 100%;
+    width: 100%;
   }
   
   .posterImageMobile {
