@@ -27,9 +27,9 @@ export const Stills = React.memo(({ disableAnimations, stillsRef, isMobile, imag
           duration: 0.5,
           scrollTrigger: {
             scrub: 0.5,
-            end: 'bottom 0%',
             trigger: stillsRef.current,
             start: 'top 100%', // Trigger when container reaches 80% into viewport
+            end: 'bottom 0%',
             toggleActions: 'play none none reset',
           },
         }
@@ -43,9 +43,9 @@ export const Stills = React.memo(({ disableAnimations, stillsRef, isMobile, imag
           duration: 0.5,
           scrollTrigger: {
             scrub: 0.5,
-            end: 'bottom 0%',
             trigger: stillsRef.current,
             start: 'top 100%', // Trigger when container reaches 80% into viewport
+            end: 'bottom 0%',
             toggleActions: 'play none none reset',
           },
         }

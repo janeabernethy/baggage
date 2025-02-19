@@ -10,54 +10,6 @@ export const About = ({ disableAnimations, isMobile, aboutRef, pic }: { disableA
 
   const textRef = React.useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => {
-
-    if(disableAnimations) {
-      return;
-    }
-    if (!aboutRef.current) {
-      return
-    }
-
-
-    if (!isMobile) {
-      gsap.fromTo(
-        aboutRef.current.children,
-        { opacity: 0, y: 20 }, // Initial state
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.1, // Delay between each div animation
-          duration: 0.5,
-          scrollTrigger: {
-            trigger: aboutRef.current,
-            start: 'top 80%', // Trigger when container reaches 80% into viewport
-            toggleActions: 'play none none none',
-          },
-        }
-      );
-    }
-    else {
-      if (!textRef.current) {
-        return;
-      }
-      gsap.fromTo(
-        textRef.current.children,
-        { opacity: 0, y: 0 }, // Initial state
-        {
-          opacity: 1,
-          y: 0,
-          stagger: 0.2, // Delay between each div animation
-          duration: 0.5,
-          scrollTrigger: {
-            trigger: textRef.current,
-            start: 'top 80%', // Trigger when container reaches 80% into viewport
-            toggleActions: 'play none none none',
-          },
-        }
-      );
-    }
-  }, [isMobile]);
 
   return <div ref={aboutRef} className={isMobile ? styles.aboutMobile : styles.about}>
     <GutsPoster isMobile={isMobile} pic={pic} />
