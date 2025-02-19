@@ -29,8 +29,8 @@ export const Stills = React.memo(({ disableAnimations, stillsRef, isMobile, imag
 
             scrub: 0.5,
             trigger: stillsRef.current,
-            start: 'top 100%', // Trigger when container reaches 80% into viewport
-            end: 'bottom 0%',
+            start: 'top 90%', // Trigger when container reaches 80% into viewport
+            end: 'bottom 10%',
             toggleActions: 'play none none reset',
           },
         }
