@@ -66,25 +66,25 @@ export const Selections = React.memo(({ disableAnimations, isMobile, selectionRe
       </div>}
       <div ref={selectionImgsRef} className={isMobile ? styles.selectionContainerMobile : styles.selectionContainer}>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/sxsw.jpeg" />
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/sxsw.jpeg"  : "/laurels/sxsw.jpg" }/>
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/liaf.jpeg" />
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/liaf.jpg"  :"/laurels/liaf.jpeg"} />
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/flickerfest.jpeg" />
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/flickerfest.jpg"  :"/laurels/flickerfest.jpeg" }/>
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/peninsula.jpeg" />
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/peninsula.jpg" : "/laurels/peninsula.jpeg" }/>
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/dingle.jpg" />
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/dingle.jpg" : "/laurels/dingle.jpg"} />
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/cleveland.jpeg" />
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/cleveland.jpg" : "/laurels/cleveland.jpeg" }/>
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/biaf.jpeg" />
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/biaf.jpg": "/laurels/biaf.jpeg" }/>
         </div>
       </div>
     </div>)
