@@ -66,25 +66,25 @@ export const Selections = React.memo(({ disableAnimations, isMobile, selectionRe
       </div>}
       <div ref={selectionImgsRef} className={isMobile ? styles.selectionContainerMobile : styles.selectionContainer}>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/sxsw.png" />
+          <img className={styles.selectionImage} src="/laurels/sxsw.jpeg" />
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/liaf.png" />
+          <img className={styles.selectionImage} src="/laurels/liaf.jpeg" />
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/flickerfest.png" />
+          <img className={styles.selectionImage} src="/laurels/flickerfest.jpeg" />
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/peninsula.png" />
+          <img className={styles.selectionImage} src="/laurels/peninsula.jpeg" />
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/dingle.png" />
+          <img className={styles.selectionImage} src="/laurels/dingle.jpg" />
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/cleveland.png" />
+          <img className={styles.selectionImage} src="/laurels/cleveland.jpeg" />
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/biaf.png" />
+          <img className={styles.selectionImage} src="/laurels/biaf.jpeg" />
         </div>
       </div>
     </div>)
