@@ -75,9 +75,6 @@ export const Selections = React.memo(({ disableAnimations, isMobile, selectionRe
           <img className={styles.selectionImage} src="/laurels/flickerfest.png" />
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src="/laurels/flickerfest.png" />
-        </div>
-        <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
           <img className={styles.selectionImage} src="/laurels/peninsula.png" />
         </div>
         <div onClick={() => window.open("")} className={styles.selectionImageContainer}>
