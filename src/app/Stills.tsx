@@ -26,6 +26,7 @@ export const Stills = React.memo(({ disableAnimations, stillsRef, isMobile, imag
           stagger: 0.1, // Delay between each div animation
           duration: 0.5,
           scrollTrigger: {
+
             scrub: 0.5,
             trigger: stillsRef.current,
             start: 'top 100%', // Trigger when container reaches 80% into viewport
