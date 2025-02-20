@@ -24,7 +24,6 @@ export default function Guts() {
   const width = React.useRef<number>(0);
   const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
 
-  const [backgroundColor, setBackgroundColor] = React.useState("white");
   const [currentSection, setCurrentSection] = React.useState(0);
 
   const appRef = React.useRef<HTMLDivElement>(null);
@@ -34,6 +33,8 @@ export default function Guts() {
   const stillsRef = React.useRef<HTMLDivElement>(null);
   const makingStillsRef = React.useRef<HTMLDivElement>(null);
   const crewRef = React.useRef<HTMLDivElement>(null);
+  const footerRef = React.useRef<HTMLDivElement>(null);
+
   const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(false);
 
   React.useEffect(() => {
@@ -122,6 +123,9 @@ export default function Guts() {
     if (section === 3) {
       crewRef.current?.scrollIntoView(scrollBehaviour)
     }
+    if (section === 4) {
+      footerRef.current?.scrollIntoView(scrollBehaviour)
+    }
   }
 
 
@@ -143,8 +147,11 @@ export default function Guts() {
     else if (scrollPercentage < 3.9) {
       currentItem = 2;
     }
-    else {
+    else if (scrollPercentage < 4.9){
       currentItem = 3;
+    }
+    else {
+      currentItem = 4;
     }
     setCurrentSection(currentItem)
 
@@ -155,7 +162,7 @@ export default function Guts() {
   }
 
   return (
-    <div ref={appRef} className={styles.app} style={{ backgroundColor}} >
+    <div ref={appRef} className={styles.app} >
 
       {!isMobile &&
         <Menu currentItem={currentSection} updateCurrentSection={scrollToSection} />
@@ -170,7 +177,7 @@ export default function Guts() {
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
         <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
         <Crew disableAnimations={prefersReducedMotion} crewRef={crewRef} height={screenHeight.current} isMobile={isMobile} />
-        {/* <Footer /> */}
+        <Footer footerRef={footerRef} isMobile={isMobile} />
       </div>
 
     </div>

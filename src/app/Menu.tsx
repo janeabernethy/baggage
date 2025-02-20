@@ -36,6 +36,12 @@ export const Menu = ({ currentItem, updateCurrentSection }: { currentItem: numbe
             <div className={styles.menuUnderline} />
           }
         </div>
+        <div onClick={() => updateCurrentSection(4)} className={styles.menuItem}>
+          <div className={styles.menuText}>Contact</div>
+          {currentItem === 4 &&
+            <div className={styles.menuUnderline} />
+          }
+        </div>
       </div>
     )
   }
