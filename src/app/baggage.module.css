@@ -182,9 +182,9 @@
 .selectionContainerMobile {
   display: grid;
   grid-template-columns: 1fr;
-  padding: 0 50px;
+  padding: 0 50px 50px;
   width: 100%;
-  gap: 50px;
+  gap: 100px;
 
 }
 
