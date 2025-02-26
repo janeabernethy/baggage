@@ -90,11 +90,13 @@
   width: 100vw;
   height: 100vh;
   background: transparent;
+  gap: 25px;
+  /* position: absolute; */
+  top: 50px;
 }
 
 .videoContainer {
-  width: 100%;
-  height: 100%;
+  width: 75%;
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 20px;
@@ -102,7 +104,6 @@
 
 .landingVideo {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   z-index: 1;
 }
@@ -365,24 +366,9 @@
   /* Smooth transition */
 }
 
-.aboutHeader {
-  display: flex;
-
-}
-
-.aboutHeaderText {
-  font-family: "Raleway", sans-serif;
-  font-weight: 600;
-  font-size: 16pt;
-  padding-bottom: 10px;
-  font-size: larger;
-  background-clip: text;
-  color: rgb(94, 93, 93);
-  /* color: transparent;
-    background-image: linear-gradient(120deg, red, hotpink); */
-}
 
 .aboutDesc {
+  width: 25%;
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
