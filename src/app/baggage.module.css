@@ -91,15 +91,30 @@
   height: 100vh;
   background: transparent;
   gap: 25px;
-  /* position: absolute; */
-  top: 50px;
+  padding-top: 100px;
+}
+
+.landingMobile {
+  padding: 50px;
+  display: flex;
+  box-sizing: border-box;
+  width: 100vw;
+  background: transparent;
+  gap: 25px;
+  padding-top: 100px;
+  flex-direction: column;
 }
 
 .videoContainer {
   width: 75%;
   overflow: hidden;
   box-sizing: border-box;
-  border-radius: 20px;
+}
+
+.videoContainerMobile {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .landingVideo {
@@ -108,9 +123,29 @@
   z-index: 1;
 }
 
+
+.landingTextMobile {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  color: rgb(94, 93, 93);
+
+}
+
+.landingText {
+  width: 25%;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  color: rgb(94, 93, 93);
+}
+
+
 .selectionOuter {
-  height: 100%;
-  padding-bottom: 50px;
   position: relative;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
@@ -186,7 +221,6 @@
 }
 
 .selectionContainer {
-
   width: 100%;
   height: calc(100% - 60px);
   /* grid-column-gap: px; */
@@ -199,16 +233,19 @@
 
 .selectionContainerMobile {
   display: grid;
-  grid-template-columns: 1fr;
-  padding: 0 50px 50px;
+  grid-template-columns: 1fr 1fr;
+  padding: 25px;
   width: 100%;
-  gap: 100px;
+  gap: 25px;
 
 }
 
 .selectionImageContainer {
   cursor: pointer;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .selectionImage {
@@ -273,88 +310,6 @@
 
 }
 
-.about {
-  width: 100vw;
-  height: 100vh;
-  background: transparent;
-  display: flex;
-
-  padding: 50px 0px 50px 50px;
-  box-sizing: border-box;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.aboutMobile {
-  box-sizing: border-box;
-  transition: opacity 0.5s ease-in-out;
-  width: 100vw;
-  height: 100vh;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-}
-
-.abouttext {
-  width: 50%;
-  flex-grow: 1;
-  flex-direction: column;
-  display: flex;
-  padding-right: 50px;
-  gap: 25px;
-  justify-content: center;
-}
-
-.aboutSectionMobile {
-  padding: 0 25px;
-}
-
-.abouttextMobile {
-  flex-grow: 1;
-  flex-direction: column;
-  display: flex;
-  /* padding-right: 25px;
-    padding-left: 25px; */
-  gap: 25px;
-  justify-content: center;
-}
-
-.poster {
-  position: relative;
-
-
-}
-
-.posterContainer {
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* padding: 0 50px 0 0px; */
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-
-.posterContainerMobile {
-  height: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-.posterImage {
-  position: relative;
-  width: 100%;
-}
-
-.posterImageMobile {
-  position: relative;
-  height: 100%;
-  width: auto;
-}
-
 .posterJane {
   left: 0;
   right: 0;
@@ -364,17 +319,6 @@
   max-width: 100%;
 
   /* Smooth transition */
-}
-
-
-.aboutDesc {
-  width: 25%;
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  line-height: 1.5;
-  color: rgb(94, 93, 93);
 }
 
 .crew {
@@ -664,4 +608,53 @@
 .bioContainer {
   width: 100%;
   height: 100vh;
+}
+
+.bioContainerMobile {
+  width: 100%;
+}
+
+.bioInner {
+ width: 100%;
+ height: 100%;
+ padding: 50px;
+ gap: 50px;
+ box-sizing: border-box;
+ display: flex;
+}
+
+.bioInnerMobile {
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  gap: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.bioPicContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+}
+
+.bioPic {
+  width: 100%;
+}
+
+.bioTextContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 25px;
+}
+
+.bio {
+  width: 100%;
+}
+
+.bioContact {
+  width: 100%;
 }

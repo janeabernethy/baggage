@@ -159,7 +159,7 @@ export default function Guts() {
         <Menu currentItem={currentSection} updateCurrentSection={scrollToSection} />
       }
       <div className={styles.content}>
-        <Landing landingRef={homeRef} disableAnimations={prefersReducedMotion} />
+        <Landing isMobile={isMobile} landingRef={homeRef} disableAnimations={prefersReducedMotion} />
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
         <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
         <Press disableAnimations={prefersReducedMotion} pressRef={pressRef} isMobile={isMobile} />
