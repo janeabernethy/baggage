@@ -2,6 +2,7 @@ import React from 'react';
 import styles from "./baggage.module.css";
 
 
+
 export const Footer = React.memo(({ footerRef, isMobile }: { footerRef: React.RefObject<HTMLDivElement | null>, isMobile: boolean }) => {
     return (<div className={isMobile ? styles.footerMobile : styles.footer} ref={footerRef} >
       <div className={styles.footerTitle}>

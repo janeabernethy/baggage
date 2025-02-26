@@ -12,7 +12,6 @@ const GSAP_STAGGER = 0.2;
 const GSAP_DURATION = 0.5;
 const GSAP_TOGGLE_ACTIONS = 'play none none reset';
 
-
 export const Crew = React.memo(({ disableAnimations, crewRef, height, isMobile }: { disableAnimations: boolean, crewRef: React.RefObject<HTMLDivElement | null>, height: number, isMobile: boolean }) => {
     gsap.registerPlugin(ScrollTrigger);
 
@@ -56,13 +55,6 @@ export const Crew = React.memo(({ disableAnimations, crewRef, height, isMobile }
         <CoreCrew disableAnimations={disableAnimations} isMobile={isMobile} />
         <Cast disableAnimations={disableAnimations} isMobile={isMobile} />
         <CoreCrew2 disableAnimations={disableAnimations} isMobile={isMobile} />
-        <SupportedBy disableAnimations={disableAnimations} isMobile={isMobile} />
-        {isMobile &&
-            <div className={styles.crewContent3}>
-
-                <CrewPic disableAnimations={disableAnimations} src={"credits/3.jpg"} isMobile={isMobile} />
-            </div>
-        }
     </div>
 });
 
@@ -175,7 +167,6 @@ const CoreCrew2 = React.memo(({ disableAnimations, isMobile }: { disableAnimatio
         { header: "Producers", names: ["Vanessa Batten"] },
         { header: "Music", names: ["Alex Olijnyk"] },
         { header: "Cinematography", names: ["George Milburn"] },
-
         { header: "Editing", names: ["Dan Williamson"] }
     ];
 
@@ -190,67 +181,6 @@ const CoreCrew2 = React.memo(({ disableAnimations, isMobile }: { disableAnimatio
 })
 
 
-const Tutors = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
-
-    const containerRef = React.useRef<HTMLDivElement>(null);
-
-    const crewSections: CrewSection[] = [
-        { header: "Animation Tutors", names: ["Andy Symanowski", "Laurie Sitzia"] },
-        { header: "Story Development Tutors", names: ["Rich Webber", "Sam Morrison", "Suzie Templeton"] },
-        { header: "Storyboarding Tutor", names: ["Jay Clarke"] },
-        { header: "Sound Design Tutor", names: ["Matt Loveridge"] },
-        { header: "Set Dressing Tutor", names: ["Phil Davies"] },
-        { header: "Model Making Tutors", names: ['Jim Parkyns', "Jack Slade"] },
-        { header: "Compositing Tutors", names: ["Jim Lewis"] },
-    ];
-
-    return (
-        <div className={styles.crewContent3}>
-
-            <div ref={containerRef} className={styles.crewCol}>
-                <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} mobileImg={"/guts/nat.jpg"} sections={crewSections} />
-            </div>
-
-        </div>
-    )
-});
-
-
-
-const SupportedBy = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
-
-
-
-    return (
-        <div className={styles.crewContent3} style={{ padding: "50px 0px" }}>
-            <div className={styles.crewHeader} style={{ paddingBottom: 25 }}>Supported By</div>
-            <div className={styles.supportedByContainer}>
-                <div className={isMobile ? styles.supportedByMobile : styles.supportedBy}>
-                    <SupportImg imgName="/supportedBy/aard.jpg" alt="Aardman" link="https://academy.aardman.com" />
-                    <SupportImg imgName="/supportedBy/IPCF.jpg" alt="Ian Potter Culteral Trust" link="https://www.ianpotter.org.au/" />
-
-                    <SupportImg imgName="/supportedBy/vicscreen.jpg" alt="Vic Screen" link="https://vicscreen.vic.gov.au/news/from-melbourne-to-aardman-the-stop-motion-journey-of-lucy-davidson" />
-
-
-
-                    <SupportImg imgName="/supportedBy/HAB.jpg" alt="Hunt and Brew" link="https://huntandbrew.com/" />
-                    <SupportImg imgName="/supportedBy/SA.jpg" alt="Screen Australia" link="https://www.screenaustralia.gov.au/the-screen-guide/t/baggage-2024/43006/" />
-
-
-                </div>
-            </div>
-
-        </div>
-    )
-});
-
-const SupportImg = React.memo(({ imgName, alt, link }: { imgName: string, alt: string, link: string }) => {
-    return (<div className={styles.supportImgContainer} onClick={() => { window.open(link) }}>
-        <img className={styles.supportImg} src={imgName} alt={alt} />
-    </div>)
-})
-
-
 const CrewPic = ({ disableAnimations, src, isMobile }: { disableAnimations: boolean, src: string, isMobile: boolean }) => {
     const containerRef = React.useRef<HTMLDivElement>(null);
 
@@ -262,7 +192,6 @@ const CrewPic = ({ disableAnimations, src, isMobile }: { disableAnimations: bool
             if (!containerRef.current) {
                 return
             }
-            // Apply GSAP animation to each child div within the container
             gsap.fromTo(
                 containerRef.current.children,
                 { opacity: 0, y: 20 }, // Initial state

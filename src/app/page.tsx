@@ -4,19 +4,18 @@ import React from 'react';
 import styles from "./baggage.module.css";
 
 
-
-import { About } from './About';
 import { Crew } from './Crew';
-import { Footer } from './Footer';
 import { Landing } from './Landing';
 import { Menu } from './Menu';
 import { Selections } from './Selections';
 import { Stills } from './Stills';
+import { Press } from './Press';
+import { SupportedBy } from './SupportedBy';
+import { Bio } from './Bio';
 
 const BTS_ROW_1 = ["/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg", "/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg"]
 const BTS_ROW_2 = ["/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg", "/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg"]
-const STILLS_ROW_1 = ["/bts/11.jpg", "/bts/12.jpg", "/bts/13.jpg", "/bts/14.jpg", "/bts/15.jpg", "/bts/16.jpg", "/bts/17.jpg", "/bts/18.jpg", "/bts/19.jpg", "/bts/11.jpg"]
-const STILLS_ROW_2 =["/bts/19.jpg", "/bts/18.jpg", "/bts/17.jpg", "/bts/16.jpg", "/bts/15.jpg", "/bts/14.jpg", "/bts/13.jpg", "/bts/12.jpg", "/bts/11.jpg", "/bts/10.jpg"]
+
 
 export default function Guts() {
   const screenHeight = React.useRef<number>(0);
@@ -30,10 +29,11 @@ export default function Guts() {
   const homeRef = React.useRef<HTMLDivElement>(null);
   const aboutRef = React.useRef<HTMLDivElement>(null);
   const selectionRef = React.useRef<HTMLDivElement>(null);
-  const stillsRef = React.useRef<HTMLDivElement>(null);
+  const pressRef = React.useRef<HTMLDivElement>(null);
   const makingStillsRef = React.useRef<HTMLDivElement>(null);
+  const bioRef = React.useRef<HTMLDivElement>(null);
+
   const crewRef = React.useRef<HTMLDivElement>(null);
-  const footerRef = React.useRef<HTMLDivElement>(null);
 
   const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(false);
 
@@ -41,17 +41,12 @@ export default function Guts() {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const handleChange = () => {
-
       setPrefersReducedMotion(mediaQuery.matches);
     };
-
-
-
     setPrefersReducedMotion(mediaQuery.matches);
 
 
     mediaQuery.addEventListener("change", handleChange);
-
     return () => {
       mediaQuery.removeEventListener("change", handleChange);
     };
@@ -77,7 +72,6 @@ export default function Guts() {
           aboutRef.current.clientHeight +
           selectionRef.current.clientHeight +
           crewRef.current.clientHeight +
-          stillsRef.current.clientHeight +
           makingStillsRef.current.clientHeight);
       }
     }
@@ -115,16 +109,13 @@ export default function Guts() {
       homeRef.current?.scrollIntoView(scrollBehaviour)
     }
     if (section === 1) {
-      aboutRef.current?.scrollIntoView(scrollBehaviour)
-    }
-    if (section === 2) {
       selectionRef.current?.scrollIntoView(scrollBehaviour)
     }
-    if (section === 3) {
-      crewRef.current?.scrollIntoView(scrollBehaviour)
+    if (section === 2) {
+      pressRef.current?.scrollIntoView(scrollBehaviour)
     }
-    if (section === 4) {
-      footerRef.current?.scrollIntoView(scrollBehaviour)
+    if (section === 3) {
+      bioRef.current?.scrollIntoView(scrollBehaviour)
     }
   }
 
@@ -147,7 +138,7 @@ export default function Guts() {
     else if (scrollPercentage < 3.9) {
       currentItem = 2;
     }
-    else if (scrollPercentage < 4.9){
+    else if (scrollPercentage < 4.9) {
       currentItem = 3;
     }
     else {
@@ -168,18 +159,14 @@ export default function Guts() {
         <Menu currentItem={currentSection} updateCurrentSection={scrollToSection} />
       }
       <div className={styles.content}>
-        {!isMobile &&
-          <Landing landingRef={homeRef} disableAnimations={prefersReducedMotion} />
-        }
-        <About aboutRef={aboutRef} isMobile={isMobile}  />
-   
-        <Stills disableAnimations={prefersReducedMotion} stillsRef={stillsRef} isMobile={isMobile} imagesRow1={STILLS_ROW_1} imagesRow2={STILLS_ROW_2} />
+        <Landing landingRef={homeRef} disableAnimations={prefersReducedMotion} />
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
         <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
+        <Press disableAnimations={prefersReducedMotion} pressRef={pressRef} isMobile={isMobile} />
+        <Bio disableAnimations={prefersReducedMotion} bioRef={bioRef} isMobile={isMobile} />
         <Crew disableAnimations={prefersReducedMotion} crewRef={crewRef} height={screenHeight.current} isMobile={isMobile} />
-        <Footer footerRef={footerRef} isMobile={isMobile} />
+        <SupportedBy disableAnimations={prefersReducedMotion} isMobile={isMobile}/>
       </div>
-
     </div>
   );
 }
