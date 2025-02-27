@@ -33,7 +33,7 @@
   flex-direction: column;
   display: flex;
   font-weight: 600;
-  color: rgb(94, 93, 93);
+  color: #5e5d5d;
   font-family: "Raleway", sans-serif;
 }
 
@@ -42,7 +42,7 @@
   font-size: medium;
   flex-direction: column;
   display: flex;
-  font-weight: 600;
+  font-weight: 700;
   color: black;
   font-family: "Raleway", sans-serif;
 }
@@ -576,9 +576,8 @@
   height: 30px;
 }
 
-.contactIcon:hover {
+.contactIcon {
   cursor: pointer;
-  transform: scale(1.1);
 }
 
 .contactIconImg {
