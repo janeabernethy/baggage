@@ -18,9 +18,12 @@ const BTS_ROW_2 = ["/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "
 
 
 export default function Guts() {
-  const screenHeight = React.useRef<number>(0);
+
+  
+  const [screenHeight, setScreenHeight] = React.useState<number>(0);
+  const [width, setWidth] = React.useState<number>(0);
+
   const [totalHeight, setTotalHeight] = React.useState(0);
-  const width = React.useRef<number>(0);
   const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
 
   const [currentSection, setCurrentSection] = React.useState(0);
@@ -59,9 +62,10 @@ export default function Guts() {
 
     document.title = "Baggage Film";
     const calculateDimensions = () => {
-      screenHeight.current = window.innerHeight;
+  
+      setScreenHeight(window.innerHeight)
       setIsMobile(window.innerWidth < window.innerHeight);
-      width.current = window.innerWidth;
+      setWidth(window.innerWidth);
 
 
     }
@@ -82,7 +86,7 @@ export default function Guts() {
     }
 
 
-    if (screenHeight.current === 0) {
+    if (screenHeight === 0) {
       calculateDimensions();
     }
 
@@ -122,7 +126,7 @@ export default function Guts() {
 
   const handleScroll = () => {
     const scrollOffset = window.scrollY
-    const scrollPercentage = scrollOffset / screenHeight.current
+    const scrollPercentage = scrollOffset / screenHeight
 
 
 
@@ -159,7 +163,7 @@ export default function Guts() {
         <Menu currentItem={currentSection} updateCurrentSection={scrollToSection} />
       }
       <div className={styles.content}>
-        <Landing isMobile={isMobile} landingRef={homeRef} disableAnimations={prefersReducedMotion} />
+        <Landing height={screenHeight} width={width} isMobile={isMobile} landingRef={homeRef} disableAnimations={prefersReducedMotion} />
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
         <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
         <Press disableAnimations={prefersReducedMotion} pressRef={pressRef} isMobile={isMobile} />
