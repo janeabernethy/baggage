@@ -18,8 +18,6 @@ const BTS_ROW_2 = ["/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "
 
 
 export default function Guts() {
-
-  
   const [screenHeight, setScreenHeight] = React.useState<number>(0);
   const [width, setWidth] = React.useState<number>(0);
 
