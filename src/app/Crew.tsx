@@ -99,7 +99,7 @@ const FilmByLucy = React.memo(({ disableAnimations, isMobile }: { disableAnimati
             <div ref={containerRef} className={isMobile ? styles.crewSectionJaneMobile : styles.crewSectionJane}>
                 <div className={styles.crewName} style={{ fontSize: 30 }}>A film by</div>
                 <div className={styles.lucyHeader}>Lucy Davidson</div>
-                <CrewPic disableAnimations={disableAnimations} src={"lucy.jpeg"} isMobile={isMobile} />
+                <CrewPic disableAnimations={disableAnimations} src={"/credits/1.jpg"} isMobile={isMobile} />
             </div>
 
 
@@ -154,7 +154,7 @@ const CoreCrew = React.memo(({ disableAnimations, isMobile }: { disableAnimation
     ];
     return (
         <div className={styles.crewContent3} >
-            <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} mobileImg={"/credits/1.jpg"} sections={crewSections} />
+            <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} sections={crewSections}  mobileImg={"/credits/3.jpg"} />
         </div>
     )
 })

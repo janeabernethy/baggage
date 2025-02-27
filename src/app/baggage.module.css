@@ -134,6 +134,7 @@
 .selectionOuter {
   position: relative;
   opacity: 0;
+  padding: 50px;
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -211,7 +212,7 @@
   height: calc(100% - 60px);
   /* grid-column-gap: px; */
   grid-row-gap: 12.5px;
-  padding: 50px;
+  padding-top: 50px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   display: grid;
   box-sizing: border-box;
@@ -291,7 +292,6 @@
 }
 
 .stillImage {
-  border-radius: 5px;
   max-height: 100%;
 
 }
@@ -562,8 +562,27 @@
 }
 
 .link:hover {
-  font-weight: 600;
+
   color: black;
+}
+
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.contactHeader {
+  color: black;
+  font-weight: 500;
+  padding-bottom: 5px;
+}
+
+.contactItem {
+  display: flex;
+  gap: 5px;
+  display: flex;
+  align-items: center;
 }
 
 .contactIcons {
@@ -572,8 +591,8 @@
 }
 
 .contactIcon {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 
 .contactIcon {
@@ -587,7 +606,102 @@
 
 .pressContainer {
   width: 100%;
-  height: 100vh;
+  height: 100%;
+}
+
+.pressContainerMobile {
+  width: 100%;
+  height: 100%;
+}
+
+.pressItemsContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  gap: 25px;
+  padding: 50px;
+}
+
+.pressItemsContainerMobile {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  gap: 25px;
+  padding: 25px
+}
+
+.pressItem {
+  width: 100%;
+  aspect-ratio: 16/9;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid rgb(94, 93, 93);
+
+}
+
+.pressItemImageContainer {
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.pressItemImage {
+  width: 100%;
+  height: 100%;
+
+}
+
+.pressItemTextContainer {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 10px;
+  font-family: "Raleway", sans-serif;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  height: 100%;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  flex-direction: column;
+  opacity: 0;
+}
+
+.pressItemTextContainerMobile {
+  position: absolute;
+  box-sizing: border-box;
+  padding: 10px;
+
+  font-family: "Raleway", sans-serif;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  height: 100%;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  flex-direction: column;
+}
+
+.pressItemTextContainer:hover {
+  opacity: 1;
+}
+
+.pressItemTitle {
+  font-size: 12pt;
+  font-weight: bolder;
+}
+
+.pressItemSubtitle {
+  font-size: 12pt;
+  text-shadow: 0 0 black;
 }
 
 .bioContainer {
@@ -600,12 +714,12 @@
 }
 
 .bioInner {
- width: 100%;
- height: 100%;
- padding: 50px;
- gap: 50px;
- box-sizing: border-box;
- display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  gap: 50px;
+  box-sizing: border-box;
+  display: flex;
 }
 
 .bioInnerMobile {
@@ -620,7 +734,7 @@
 
 .bioPicContainer {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 40%;
 }
@@ -631,9 +745,13 @@
 
 .bioTextContainer {
   display: flex;
+  line-height: 1.5;
   flex-direction: column;
   width: 100%;
   gap: 25px;
+  color: #5e5d5d;
+  font-family: "Raleway", sans-serif;
+  font-size: medium;
 }
 
 .bio {
@@ -642,4 +760,8 @@
 
 .bioContact {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
 }

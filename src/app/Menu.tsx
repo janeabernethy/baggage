@@ -10,8 +10,8 @@ const GRAY_LINKEDIN = "/socials/linkedin_gray.svg"
 
 export const Menu = ({ currentItem, updateCurrentSection }: { currentItem: number, updateCurrentSection: (newSection: number) => void }) => {
 
-  const [instaIcon, setInstaIcon] = React.useState(GRAY_INSTA);
-  const [linkedinIcon, setLinkedinIcon] = React.useState(GRAY_LINKEDIN);
+  const [instaIcon, setInstaIcon] = React.useState(BLACK_INSTA);
+  const [linkedinIcon, setLinkedinIcon] = React.useState(BLACK_LINKEDIN);
 
 
   function getMenuItemClass(index: number) {
@@ -40,10 +40,10 @@ export const Menu = ({ currentItem, updateCurrentSection }: { currentItem: numbe
         </div>
       </div>
       <div className={styles.contactIcons}>
-        <div className={styles.contactIcon} onMouseOver={() => { setInstaIcon(BLACK_INSTA)}} onMouseOut={() => {setInstaIcon(GRAY_INSTA)}} onClick={() => { window.open("https://www.instagram.com/lucy_maree_davidson/") }}>
+        <div className={styles.contactIcon} onMouseOver={() => { setInstaIcon(GRAY_INSTA)}} onMouseOut={() => {setInstaIcon(BLACK_INSTA)}} onClick={() => { window.open("https://www.instagram.com/lucy_maree_davidson/") }}>
           <img className={styles.contactIconImg} src={instaIcon} alt="link to instagram" />
         </div>
-        <div className={styles.contactIcon} onMouseOver={() => { setLinkedinIcon(BLACK_LINKEDIN)}} onMouseOut={() => {setLinkedinIcon(GRAY_LINKEDIN)}}  onClick={() => { window.open("https://www.youtube.com/channel/UCiA4Ft1wfLVMVfWrC1wTzog") }}>
+        <div className={styles.contactIcon} onMouseOver={() => { setLinkedinIcon(GRAY_LINKEDIN)}} onMouseOut={() => {setLinkedinIcon(BLACK_LINKEDIN)}}  onClick={() => { window.open("https://www.youtube.com/channel/UCiA4Ft1wfLVMVfWrC1wTzog") }}>
           <img className={styles.contactIconImg} src={linkedinIcon} alt="link to linkedin" />
         </div>
       </div>
