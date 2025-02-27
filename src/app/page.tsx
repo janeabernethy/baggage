@@ -71,7 +71,7 @@ export default function Guts() {
     }
 
     const calculateTotalHeight = () => {
-      if (homeRef.current && aboutRef.current && selectionRef.current && crewRef.current && stillsRef.current && makingStillsRef.current) {
+      if (homeRef.current && aboutRef.current && selectionRef.current && crewRef.current && makingStillsRef.current) {
         setTotalHeight(homeRef.current.clientHeight +
           aboutRef.current.clientHeight +
           selectionRef.current.clientHeight +
