@@ -14,14 +14,15 @@ import { Press } from './Press';
 import { SupportedBy } from './SupportedBy';
 import { Bio } from './Bio';
 
-const BTS_ROW_1 = ["/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/10.jpg", "/bts/07.jpg","/bts/09.jpg", "/bts/06.jpg"]
-const BTS_ROW_2 = ["/bts/10.jpg", "/bts/07.jpg","/bts/09.jpg", "/bts/06.jpg"]
+const BTS_ROW_1 = ["/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/10.jpg", "/bts/07.jpg", "/bts/09.jpg", "/bts/06.jpg"]
+const BTS_ROW_2 = ["/bts/10.jpg", "/bts/07.jpg", "/bts/09.jpg", "/bts/06.jpg"]
 
 
 export default function Guts() {
   const [screenHeight, setScreenHeight] = React.useState<number>(0);
   const [width, setWidth] = React.useState<number>(0);
 
+  const [loaded, setLoaded] = React.useState(false);
   const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
 
   const [currentSection, setCurrentSection] = React.useState(0);
@@ -61,10 +62,10 @@ export default function Guts() {
 
     document.title = "Baggage Film";
     const calculateDimensions = () => {
-      if(window.innerHeight !== screenHeight) {
+      if (window.innerHeight !== screenHeight) {
         setScreenHeight(window.innerHeight)
       }
-    
+
       setIsMobile(window.innerWidth < window.innerHeight);
       setWidth(window.innerWidth);
 
@@ -76,7 +77,7 @@ export default function Guts() {
 
     const handleResize = () => {
       calculateDimensions();
-      
+
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -87,7 +88,7 @@ export default function Guts() {
       window.removeEventListener("scroll", handleScroll);
 
     };
-  }, [isMobile])
+  }, [isMobile, loaded])
 
 
   const scrollToSection = (section: number) => {
@@ -133,13 +134,16 @@ export default function Guts() {
     return <div />
   }
 
+
   return (
+
     <div ref={appRef} className={styles.app} >
-
-
+      {!loaded &&
+        <Loader />
+}
       <Menu isMobile={isMobile} currentItem={currentSection} updateCurrentSection={scrollToSection} />
       <div className={isMobile ? styles.contentMobile : styles.content}>
-        <Landing height={screenHeight} width={width} isMobile={isMobile} landingRef={homeRef} disableAnimations={prefersReducedMotion} />
+        <Landing didLoad={() => setLoaded(true)} height={screenHeight} width={width} isMobile={isMobile} landingRef={homeRef} disableAnimations={prefersReducedMotion} />
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
         <Press width={width} height={screenHeight} disableAnimations={prefersReducedMotion} pressRef={pressRef} isMobile={isMobile} />
         <Bio disableAnimations={prefersReducedMotion} bioRef={bioRef} isMobile={isMobile} />
@@ -150,6 +154,13 @@ export default function Guts() {
       </div>
     </div>
   );
+
 }
 
+
+const Loader = () => {
+  return <div style={{position: "absolute", zIndex: 1000, width: "100vw", height: "100vh", display: "flex", alignItems: "center", background: "white", justifyContent: "center"}}>
+    <img className={styles.loader} src="loader.jpg" height="60"/>
+  </div>
+}
 
