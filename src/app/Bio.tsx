@@ -26,10 +26,11 @@ export const Bio = React.memo(({ disableAnimations, bioRef, isMobile }: { disabl
               {
                 opacity: 1,
                 y: 0,
-                scrub:0.5,
+          
                 stagger: 0.5,
                 duration: 0.5,
                 scrollTrigger: {
+                scrub:0.5,
                   trigger: bioRef.current,
                   start: 'top 60%',
                   end: 'top 30%',

@@ -13,7 +13,6 @@ const GSAP_DURATION = 0.5;
 const GSAP_TOGGLE_ACTIONS = 'play none none reset';
 
 export const Crew = React.memo(({ disableAnimations, crewRef, height, isMobile }: { disableAnimations: boolean, crewRef: React.RefObject<HTMLDivElement | null>, height: number, isMobile: boolean }) => {
-    gsap.registerPlugin(ScrollTrigger);
 
 
     React.useEffect(() => {
@@ -137,7 +136,7 @@ const CrewSection = React.memo(({ disableAnimations, isMobile, sections, mobileI
 
 const Cast = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
     const crewSections: CrewSection[] = [
-        { header: "Cast", names: ["Eve Eloise Gilbert", "Sophie Schoorman", "Dominik Shields"] },
+        { header: "Cast", names: ["Eve Eloise Gilbert", "Sophie Schoorman", "Dominik Shields", "Camillo Sancisi"] },
     ];
     return (
         <div className={styles.crewContent3} >

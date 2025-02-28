@@ -41,10 +41,10 @@ export const Selections = React.memo(({ disableAnimations, isMobile, selectionRe
           {
             opacity: 1,
             y: 0,
-            scrub:0.5,
+      
             duration: 0.5,
             scrollTrigger: {
-
+              scrub:0.5,
               trigger: selectionImgsRef.current,
               start: 'top 60%',
               end: 'top 30%',

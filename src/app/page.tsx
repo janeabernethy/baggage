@@ -2,7 +2,8 @@
 
 import React from 'react';
 import styles from "./baggage.module.css";
-
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 import { Crew } from './Crew';
 import { Landing } from './Landing';
@@ -39,6 +40,8 @@ export default function Guts() {
   const [prefersReducedMotion, setPrefersReducedMotion] = React.useState(false);
 
   React.useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const handleChange = () => {
@@ -164,9 +167,9 @@ export default function Guts() {
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
         <Press width={width} height={screenHeight} disableAnimations={prefersReducedMotion} pressRef={pressRef} isMobile={isMobile} />
         <Bio disableAnimations={prefersReducedMotion} bioRef={bioRef} isMobile={isMobile} />
-        <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
+        <Stills height={screenHeight} disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
 
-        <Crew disableAnimations={prefersReducedMotion} crewRef={crewRef} height={screenHeight.current} isMobile={isMobile} />
+        <Crew disableAnimations={prefersReducedMotion} crewRef={crewRef} height={screenHeight} isMobile={isMobile} />
         <SupportedBy disableAnimations={prefersReducedMotion} isMobile={isMobile} />
       </div>
     </div>

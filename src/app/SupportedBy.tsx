@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styles from "./baggage.module.css";
-export const SupportedBy = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
+export const SupportedBy = ({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
 
     return (
         <div className={styles.crewContent3} style={{ padding: "50px 0px" }}>
@@ -21,7 +21,7 @@ export const SupportedBy = React.memo(({ disableAnimations, isMobile }: { disabl
 
         </div>
     )
-});
+};
 
 const SupportImg = React.memo(({ imgName, alt, link }: { imgName: string, alt: string, link: string }) => {
     return (<div className={styles.supportImgContainer} onClick={() => { window.open(link) }}>
