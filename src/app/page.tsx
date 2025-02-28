@@ -14,8 +14,8 @@ import { Press } from './Press';
 import { SupportedBy } from './SupportedBy';
 import { Bio } from './Bio';
 
-const BTS_ROW_1 = ["/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg", "/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg"]
-const BTS_ROW_2 = ["/bts/06.jpg", "/bts/07.jpg", "/bts/08.jpg", "/bts/09.jpg", "/bts/10.jpg", "/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/05.jpg"]
+const BTS_ROW_1 = ["/bts/01.jpg", "/bts/02.jpg", "/bts/03.jpg", "/bts/04.jpg", "/bts/10.jpg", "/bts/07.jpg","/bts/09.jpg", "/bts/06.jpg"]
+const BTS_ROW_2 = ["/bts/10.jpg", "/bts/07.jpg","/bts/09.jpg", "/bts/06.jpg"]
 
 
 export default function Guts() {
