@@ -13,7 +13,8 @@ export const Landing = React.memo(({ landingRef, isMobile, disableAnimations, he
   }, [width, height])
 
   return <div ref={landingRef} className={isMobile ? styles.landingMobile : styles.landing}>
-    <div className={styles.landingInner}>
+    <div className={isMobile ? styles.landingInnerMobile : styles.landingInner}>
+
     <div className={isMobile ? styles.videoContainerMobile: styles.videoContainer}>
       {disableAnimations &&
         <img style={{ width: "100%", "borderRadius": 20 }} src="titlethumb.avif" alt="baggage poster" />

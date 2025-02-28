@@ -60,7 +60,7 @@ export default function Guts() {
 
     document.title = "Baggage Film";
     const calculateDimensions = () => {
-  
+
       setScreenHeight(window.innerHeight)
       setIsMobile(window.innerWidth < window.innerHeight);
       setWidth(window.innerWidth);
@@ -157,17 +157,16 @@ export default function Guts() {
   return (
     <div ref={appRef} className={styles.app} >
 
-      {!isMobile &&
-        <Menu currentItem={currentSection} updateCurrentSection={scrollToSection} />
-      }
-      <div className={styles.content}>
+
+      <Menu isMobile={isMobile} currentItem={currentSection} updateCurrentSection={scrollToSection} />
+      <div className={isMobile ? styles.contentMobile : styles.content}>
         <Landing height={screenHeight} width={width} isMobile={isMobile} landingRef={homeRef} disableAnimations={prefersReducedMotion} />
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
         <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
-        <Press disableAnimations={prefersReducedMotion} pressRef={pressRef} isMobile={isMobile} />
+        <Press width={width} height={screenHeight} disableAnimations={prefersReducedMotion} pressRef={pressRef} isMobile={isMobile} />
         <Bio disableAnimations={prefersReducedMotion} bioRef={bioRef} isMobile={isMobile} />
         <Crew disableAnimations={prefersReducedMotion} crewRef={crewRef} height={screenHeight.current} isMobile={isMobile} />
-        <SupportedBy disableAnimations={prefersReducedMotion} isMobile={isMobile}/>
+        <SupportedBy disableAnimations={prefersReducedMotion} isMobile={isMobile} />
       </div>
     </div>
   );

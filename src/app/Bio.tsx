@@ -2,9 +2,9 @@ import React from 'react';
 import styles from "./baggage.module.css";
 
 export const Bio = React.memo(({ disableAnimations, bioRef, isMobile }: { disableAnimations: boolean, bioRef: React.RefObject<HTMLDivElement | null>, isMobile: boolean }) => {
-    return <div ref={bioRef} className={styles.bioContainer}>
+    return <div ref={bioRef} className={isMobile ? styles.bioContainerMobile : styles.bioContainer}>
 
-        <div className={styles.bioInner}>
+        <div className={isMobile ? styles.bioInnerMobile : styles.bioInner}>
             <div className={styles.bioPicContainer}>
                 <img className={styles.bioPic} src="/bio/lucy.jpg" />
             </div>

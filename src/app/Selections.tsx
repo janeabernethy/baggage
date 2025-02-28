@@ -59,12 +59,9 @@ export const Selections = React.memo(({ disableAnimations, isMobile, selectionRe
 
   return (
     <div ref={selectionRef} className={isMobile ? styles.selectionOuterMobile : styles.selectionOuter} style={{ opacity: 1 }}>
-     <div className={isMobile ? styles.selectionHeaderMobile : styles.selectionHeader} style={{}}>
-        <div className={isMobile ? styles.selectionHeaderTextMobile : styles.selectionHeaderText}>
-          Festivals
-        </div>
-      </div>
-      <div ref={selectionRef} className={isMobile ? styles.selectionContainerMobile : styles.selectionContainer}>
+
+
+      <div className={isMobile ? styles.selectionContainerMobile : styles.selectionContainer}>
         <div onClick={() => window.open("https://schedule.sxsw.com/2025/directors/2206193")} className={styles.selectionImageContainer}>
           <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/sxsw.jpeg"  : "/laurels/sxsw.jpeg" }/>
         </div>
