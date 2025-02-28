@@ -22,7 +22,6 @@ export default function Guts() {
   const [screenHeight, setScreenHeight] = React.useState<number>(0);
   const [width, setWidth] = React.useState<number>(0);
 
-  const [totalHeight, setTotalHeight] = React.useState(0);
   const [isMobile, setIsMobile] = React.useState<boolean | null>(null);
 
   const [currentSection, setCurrentSection] = React.useState(0);
@@ -49,7 +48,6 @@ export default function Guts() {
     };
     setPrefersReducedMotion(mediaQuery.matches);
 
-
     mediaQuery.addEventListener("change", handleChange);
     return () => {
       mediaQuery.removeEventListener("change", handleChange);
@@ -63,29 +61,14 @@ export default function Guts() {
 
     document.title = "Baggage Film";
     const calculateDimensions = () => {
-
-      setScreenHeight(window.innerHeight)
+      if(window.innerHeight !== screenHeight) {
+        setScreenHeight(window.innerHeight)
+      }
+    
       setIsMobile(window.innerWidth < window.innerHeight);
       setWidth(window.innerWidth);
 
-
     }
-
-    const calculateTotalHeight = () => {
-      if (homeRef.current && aboutRef.current && selectionRef.current && crewRef.current && makingStillsRef.current) {
-        setTotalHeight(homeRef.current.clientHeight +
-          aboutRef.current.clientHeight +
-          selectionRef.current.clientHeight +
-          crewRef.current.clientHeight +
-          makingStillsRef.current.clientHeight);
-      }
-    }
-
-
-    if (totalHeight === 0) {
-      calculateTotalHeight();
-    }
-
 
     if (screenHeight === 0) {
       calculateDimensions();
@@ -93,7 +76,7 @@ export default function Guts() {
 
     const handleResize = () => {
       calculateDimensions();
-      calculateTotalHeight();
+      
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -128,26 +111,19 @@ export default function Guts() {
   const handleScroll = () => {
     const scrollOffset = window.scrollY
     const scrollPercentage = scrollOffset / screenHeight
-
-
-
-
-
+    console.log(scrollPercentage)
     var currentItem;
-    if (scrollPercentage < 0.9) {
+    if (scrollPercentage < 0.4) {
       currentItem = 0;
     }
-    else if (scrollPercentage < 1.9) {
+    else if (scrollPercentage < 1.3) {
       currentItem = 1;
     }
-    else if (scrollPercentage < 3.9) {
+    else if (scrollPercentage < 2.4) {
       currentItem = 2;
     }
-    else if (scrollPercentage < 4.9) {
-      currentItem = 3;
-    }
     else {
-      currentItem = 4;
+      currentItem = 3;
     }
     setCurrentSection(currentItem)
 

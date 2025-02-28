@@ -16,17 +16,12 @@ export const Crew = React.memo(({ disableAnimations, crewRef, height, isMobile }
 
 
     React.useEffect(() => {
-
-
         const ctx = gsap.context(() => {
             if (disableAnimations) {
                 return;
             }
             if (!crewRef.current) {
                 return
-            }
-            if (isMobile) {
-                return;
             }
             gsap.fromTo(
                 crewRef.current.children,

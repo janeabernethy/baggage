@@ -33,7 +33,7 @@ export const Press = React.memo(({ disableAnimations, pressRef, isMobile, height
                 opacity: 1,
                 y: 0,
              
-                stagger: 0.5,
+                stagger: 0.2,
                 duration: 0.5,
                 scrollTrigger: {
                  scrub:0.5,

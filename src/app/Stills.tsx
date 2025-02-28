@@ -9,13 +9,12 @@ export const Stills = ({ height, disableAnimations, stillsRef, isMobile, imagesR
   
     const imagesRef = React.useRef<HTMLDivElement>(null);
   
-    const isPlaying = React.useRef(false)// Track animation state
 
     const animationRef = React.useRef(null);
 
   React.useEffect(() => {
     const ctx = gsap.context(() => {
-
+      console.log(height)
     if(disableAnimations){
       return;
     }
@@ -55,7 +54,7 @@ export const Stills = ({ height, disableAnimations, stillsRef, isMobile, imagesR
             stagger: 0.1,
             duration: 0.7,
             scrollTrigger: {
-
+              scrub:0.5,
               trigger: stillsRef.current,
               start: 'top 100%',
               end: 'top 30%',
