@@ -140,10 +140,10 @@ export default function Guts() {
     <div ref={appRef} className={styles.app} >
       {!loaded &&
         <Loader />
-}
+      }
       <Menu isMobile={isMobile} currentItem={currentSection} updateCurrentSection={scrollToSection} />
       <div className={isMobile ? styles.contentMobile : styles.content}>
-        <Landing didLoad={() => setLoaded(true)} height={screenHeight} width={width} isMobile={isMobile} landingRef={homeRef} disableAnimations={prefersReducedMotion} />
+        <Landing didLoad={() => { window.setTimeout(() => setLoaded(true), 2000 ) }} height={screenHeight} width={width} isMobile={isMobile} landingRef={homeRef} disableAnimations={prefersReducedMotion} />
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
         <Press width={width} height={screenHeight} disableAnimations={prefersReducedMotion} pressRef={pressRef} isMobile={isMobile} />
         <Bio disableAnimations={prefersReducedMotion} bioRef={bioRef} isMobile={isMobile} />

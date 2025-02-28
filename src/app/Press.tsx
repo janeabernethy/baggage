@@ -63,7 +63,7 @@ export const Press = React.memo(({ disableAnimations, pressRef, isMobile, height
         }});
         return ()=> { ctx.revert()}
     
-      }, [isMobile, height]);
+      }, [isMobile]);
 
     return <div ref={pressRef} className={isMobile ? styles.pressContainerMobile : styles.pressContainer}>
 
