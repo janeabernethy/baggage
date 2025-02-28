@@ -69,7 +69,7 @@ export const Bio = React.memo(({ disableAnimations, bioRef, isMobile }: { disabl
             </div>
             <div className={styles.bioTextContainer}>
                 <div className={styles.bio}>
-                    Lucy Davidson is an Australian Stop-Motion Animation Director.  In 2022 she worked on Adam Elliot’s latest feature film MEMOIR OF A SNAIL (Annecy Crystal Award Winner 2024). Following this success, she was selected by Aardman Animation Studios Academy, to direct her upcoming short film BAGGAGE .
+                    Lucy Davidson is an Australian Stop-Motion Animation Director.  In 2022 she worked on Adam Elliot’s latest feature film MEMOIR OF A SNAIL (Annecy Crystal Award Winner 2024). Following this success, she was selected by Aardman Animation Studios Academy, to direct her short film BAGGAGE .
                 </div>
                 <div className={styles.bioContact}>
                     <div className={styles.contactSection}>
