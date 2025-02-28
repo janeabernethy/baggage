@@ -5,7 +5,7 @@ export const SupportedBy = React.memo(({ disableAnimations, isMobile }: { disabl
 
     return (
         <div className={styles.crewContent3} style={{ padding: "50px 0px" }}>
-            <div className={styles.crewHeader} style={{ paddingBottom: 25 }}>Supported By</div>
+            <div className={styles.crewName} style={{ paddingBottom: 25 }}>Supported By</div>
             <div className={styles.supportedByContainer}>
                 <div className={isMobile ? styles.supportedByMobile : styles.supportedBy}>
                     <SupportImg imgName="/supportedBy/aard.jpg" alt="Aardman" link="https://academy.aardman.com" />

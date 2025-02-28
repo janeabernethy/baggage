@@ -97,7 +97,7 @@ const FilmByLucy = React.memo(({ disableAnimations, isMobile }: { disableAnimati
     return (
         <div className={isMobile ? styles.crewContentMobile : styles.crewContent}>
             <div ref={containerRef} className={isMobile ? styles.crewSectionJaneMobile : styles.crewSectionJane}>
-                <div className={styles.crewName} style={{ fontSize: 30 }}>A film by</div>
+                <div className={styles.crewName} >A film by</div>
                 <div className={styles.lucyHeader}>Lucy Davidson</div>
                 <CrewPic disableAnimations={disableAnimations} src={"/credits/1.jpg"} isMobile={isMobile} />
             </div>
