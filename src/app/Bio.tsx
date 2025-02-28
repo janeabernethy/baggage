@@ -1,11 +1,52 @@
 import React from 'react';
 import styles from "./baggage.module.css";
+import gsap from 'gsap';
 
 export const Bio = React.memo(({ disableAnimations, bioRef, isMobile }: { disableAnimations: boolean, bioRef: React.RefObject<HTMLDivElement | null>, isMobile: boolean }) => {
+    
+    
+    React.useEffect(() => {
+        const ctx = gsap.context(() => {
+        if(disableAnimations){
+          return;
+        }
+        if (!bioRef.current) {
+          return
+        }
+    
+        if (!isMobile) {
+        
+
+        }
+        else {
+          if (bioRef.current) {
+            gsap.fromTo(
+                bioRef.current.children,
+              { opacity: 0, y: 50 }, 
+              {
+                opacity: 1,
+                y: 0,
+                scrub:0.5,
+                stagger: 0.5,
+                duration: 0.5,
+                scrollTrigger: {
+                  trigger: bioRef.current,
+                  start: 'top 60%',
+                  end: 'top 30%',
+                  toggleActions: 'play none none none',
+                },
+              }
+            );
+          }
+        }});
+        return ()=> { ctx.revert()}
+    
+      }, [isMobile]);
+
     return <div ref={bioRef} className={isMobile ? styles.bioContainerMobile : styles.bioContainer}>
 
         <div className={isMobile ? styles.bioInnerMobile : styles.bioInner}>
-            <div className={styles.bioPicContainer}>
+            <div className={isMobile ? styles.bioPicContainerMobile : styles.bioPicContainer}>
                 <img className={styles.bioPic} src="/bio/lucy.jpg" />
             </div>
             <div className={styles.bioTextContainer}>

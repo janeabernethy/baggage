@@ -37,16 +37,18 @@ export const Selections = React.memo(({ disableAnimations, isMobile, selectionRe
       if (selectionImgsRef.current) {
         gsap.fromTo(
           selectionImgsRef.current.children,
-          { opacity: 0, y: 20 }, // Initial state
+          { opacity: 0, y: 50 }, 
           {
             opacity: 1,
             y: 0,
-            stagger: 0.2, // Delay between each div animation
+            scrub:0.5,
             duration: 0.5,
             scrollTrigger: {
+
               trigger: selectionImgsRef.current,
-              start: 'top 80%',
-              toggleActions: 'play none none reset',
+              start: 'top 60%',
+              end: 'top 30%',
+              toggleActions: 'play none none reverse',
             },
           }
         );
@@ -61,7 +63,7 @@ export const Selections = React.memo(({ disableAnimations, isMobile, selectionRe
     <div ref={selectionRef} className={isMobile ? styles.selectionOuterMobile : styles.selectionOuter} style={{ opacity: 1 }}>
 
 
-      <div className={isMobile ? styles.selectionContainerMobile : styles.selectionContainer}>
+      <div ref={selectionImgsRef} className={isMobile ? styles.selectionContainerMobile : styles.selectionContainer}>
         <div onClick={() => window.open("https://schedule.sxsw.com/2025/directors/2206193")} className={styles.selectionImageContainer}>
           <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/sxsw.jpeg"  : "/laurels/sxsw.jpeg" }/>
         </div>
@@ -77,12 +79,13 @@ export const Selections = React.memo(({ disableAnimations, isMobile, selectionRe
         <div onClick={() => window.open("https://animationdingle.com/home-2/")} className={styles.selectionImageContainer}>
           <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/dingle.jpg" : "/laurels/dingle.jpg"} />
         </div>
-        <div onClick={() => window.open("https://www.clevelandfilm.org/")} className={styles.selectionImageContainer}>
-          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/cleveland.jpg" : "/laurels/cleveland.jpeg" }/>
-        </div>
         <div onClick={() => window.open("https://www.brightoninternationalanimationfestival.com/")} className={styles.selectionImageContainer}>
           <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/biaf.jpg": "/laurels/biaf.jpeg" }/>
         </div>
+        <div onClick={() => window.open("https://www.clevelandfilm.org/")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/cleveland.jpg" : "/laurels/cleveland.jpeg" }/>
+        </div>
+
       </div>
     </div>)
 });

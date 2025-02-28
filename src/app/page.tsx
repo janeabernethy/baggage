@@ -162,9 +162,10 @@ export default function Guts() {
       <div className={isMobile ? styles.contentMobile : styles.content}>
         <Landing height={screenHeight} width={width} isMobile={isMobile} landingRef={homeRef} disableAnimations={prefersReducedMotion} />
         <Selections disableAnimations={prefersReducedMotion} isMobile={isMobile} selectionRef={selectionRef} />
-        <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
         <Press width={width} height={screenHeight} disableAnimations={prefersReducedMotion} pressRef={pressRef} isMobile={isMobile} />
         <Bio disableAnimations={prefersReducedMotion} bioRef={bioRef} isMobile={isMobile} />
+        <Stills disableAnimations={prefersReducedMotion} stillsRef={makingStillsRef} isMobile={isMobile} imagesRow1={BTS_ROW_1} imagesRow2={BTS_ROW_2} />
+
         <Crew disableAnimations={prefersReducedMotion} crewRef={crewRef} height={screenHeight.current} isMobile={isMobile} />
         <SupportedBy disableAnimations={prefersReducedMotion} isMobile={isMobile} />
       </div>
