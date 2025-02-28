@@ -56,11 +56,11 @@ export const Stills = ({ height, disableAnimations, stillsRef, isMobile, imagesR
             stagger: 0.1,
             duration: 0.7,
             scrollTrigger: {
-              scrub:0.5,
+  
               trigger: stillsRef.current,
               start: 'top 100%',
               end: 'top 30%',
-              toggleActions: 'play none none none',
+              toggleActions: 'play none none reverse',
             },
           }
         );
@@ -68,7 +68,7 @@ export const Stills = ({ height, disableAnimations, stillsRef, isMobile, imagesR
     }});
     return ()=> { ctx.revert()}
 
-  }, [isMobile, height]);
+  }, [isMobile]);
 
 
   return (<div ref={stillsRef} className={isMobile ? styles.stillsContainerMobile : styles.stillsContainer} >

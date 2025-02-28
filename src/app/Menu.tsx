@@ -25,7 +25,7 @@ export const Menu = React.memo(({ isMobile, currentItem, updateCurrentSection }:
       <div className={styles.menuOuter}>
         <div>
           <div onClick={() => updateCurrentSection(0)} className={getMenuItemClass(0)}>
-            <div className={styles.menuText} style={{ fontSize: "x-large" }}>Baggage</div>
+            <div className={styles.menuText} style={{ fontSize: "25pt" }}>Baggage</div>
           </div>
         </div>
         <div className={styles.menu}>
