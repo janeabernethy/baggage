@@ -24,18 +24,20 @@ export const Stills = ({ height, disableAnimations, stillsRef, isMobile, imagesR
 
     if (!isMobile) {
       
-      animationRef.current = gsap.fromTo(
+      gsap.fromTo(
         imagesRef.current.children,
-        { opacity: 0, y: 20 }, // Initial state
+        { opacity: 0, y: 50 }, // Initial state
         {
           opacity: 1,
           y: 0,
           stagger: 0.1, // Delay between each div animation
           duration: 0.5,
           scrollTrigger: {
-            trigger: stillsRef.current,
-            start: 'top 50%', // Trigger when container reaches 80% into viewport
-            toggleActions: 'play none none none',
+            scrub: 0.5,
+            trigger: imagesRef.current,
+            start: 'top 70%',
+            end: 'top 30%',
+            toggleActions: 'play none none reset',
           },
         }
       );

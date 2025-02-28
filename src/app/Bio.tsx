@@ -16,7 +16,24 @@ export const Bio = React.memo(({ disableAnimations, bioRef, isMobile }: { disabl
     
         if (!isMobile) {
         
+            gsap.fromTo(
+                bioRef.current.children,
+                { opacity: 0, y: 50 }, // Initial state
+                {
+                  opacity: 1,
+                  y: 0,
+                  stagger: 0.1, // Delay between each div animation
+                  duration: 0.5,
+                  scrollTrigger: {
+                    scrub: 0.5,
 
+                    trigger: bioRef.current,
+                    start: 'top 70%',
+                    end: 'top 30%',
+                    toggleActions: 'play none none reset',
+                  },
+                }
+              );
         }
         else {
           if (bioRef.current) {

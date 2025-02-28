@@ -21,7 +21,23 @@ export const Press = React.memo(({ disableAnimations, pressRef, isMobile, height
         }
     
         if (!isMobile) {
-        
+            gsap.fromTo(
+                prerssItemsRef.current.children,
+                { opacity: 0, y: 50 }, // Initial state
+                {
+                  opacity: 1,
+                  y: 0,
+                  stagger: 0.1, // Delay between each div animation
+                  duration: 0.5,
+                  scrollTrigger: {
+                    scrub: 0.5,
+                    trigger: prerssItemsRef.current,
+                    start: 'top 70%',
+                    end: 'top 30%',
+                    toggleActions: 'play none none reset',
+                  },
+                }
+              );
 
         }
         else {
@@ -32,7 +48,6 @@ export const Press = React.memo(({ disableAnimations, pressRef, isMobile, height
               {
                 opacity: 1,
                 y: 0,
-             
                 stagger: 0.2,
                 duration: 0.5,
                 scrollTrigger: {
@@ -48,7 +63,7 @@ export const Press = React.memo(({ disableAnimations, pressRef, isMobile, height
         }});
         return ()=> { ctx.revert()}
     
-      }, [isMobile]);
+      }, [isMobile, height]);
 
     return <div ref={pressRef} className={isMobile ? styles.pressContainerMobile : styles.pressContainer}>
 
