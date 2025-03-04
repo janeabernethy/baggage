@@ -68,15 +68,15 @@ export const Press = React.memo(({ disableAnimations, pressRef, isMobile, height
     return <div ref={pressRef} className={isMobile ? styles.pressContainerMobile : styles.pressContainer}>
 
         <div ref={prerssItemsRef} className={isMobile ?  styles.pressItemsContainerMobile : styles.pressItemsContainer}>
-            <PressItem itemWidth={itemWidth} itemHeight={itemHeight} isMobile={isMobile} imgSrc="/press/collider.png" title="Collider" subtitle="Aardman Animation Scans for Emotional 'Baggage' in Adorable Short Film Trailer [Exclusive]" link="https://collider.com/baggage-trailer-aardman/" />
-            <PressItem itemWidth={itemWidth} itemHeight={itemHeight}  isMobile={isMobile} imgSrc="/press/vicscreen.png" title="VicScreen" subtitle="From Melbourne to Aardman: The Stop-Motion Journey of Lucy Davidson" link="https://vicscreen.vic.gov.au/news/from-melbourne-to-aardman-the-stop-motion-journey-of-lucy-davidson" />
+            <PressItem itemWidth={itemWidth} itemHeight={itemHeight} isMobile={isMobile} imgSrc="/press/collider.jpg" title="Collider" subtitle="Aardman Animation Scans for Emotional 'Baggage' in Adorable Short Film Trailer [Exclusive]" link="https://collider.com/baggage-trailer-aardman/" />
+            <PressItem itemWidth={itemWidth} itemHeight={itemHeight}  isMobile={isMobile} imgSrc="/press/vicscreen.jpg" title="VicScreen" subtitle="From Melbourne to Aardman: The Stop-Motion Journey of Lucy Davidson" link="https://vicscreen.vic.gov.au/news/from-melbourne-to-aardman-the-stop-motion-journey-of-lucy-davidson" />
             <PressItem itemWidth={itemWidth} itemHeight={itemHeight} isMobile={isMobile} imgSrc="/press/brwc.jpg" title="Battle Royale with Cheese" subtitle="Baggage: Review" link="https://battleroyalewithcheese.com/2025/03/baggage-review/" />
 
             <PressItem itemWidth={itemWidth} itemHeight={itemHeight} isMobile={isMobile} imgSrc="/press/top10Films.jpg" title="Top 10 Films" subtitle="Interview: “I Try To Push The Boundaries” – Lucy Davidson On “Baggage” And The Art Of Stop-Motion" link="https://www.top10films.co.uk/86402-interview-i-try-to-push-the-boundaries-lucy-davidson-on-baggage-and-the-art-of-stop-motion/" />
 
-            <PressItem itemWidth={itemWidth} itemHeight={itemHeight} isMobile={isMobile} imgSrc="/press/beyondthecineramadome.png" title="Beyond the Cinerama Dome" subtitle="SXSW: Director Lucy Davidson Unpacks Her Baggage" link="https://beyondthecineramadome.com/interviews/sxsw-lucy-davidson-unpacks-her-baggage" />
-            <PressItem itemWidth={itemWidth} itemHeight={itemHeight} isMobile={isMobile} imgSrc="/press/mxdwn.png" title="MXDWN" subtitle="Emotional Baggage Turns Literal In New Animated Short Film Premiered At SXSW" link="https://movies.mxdwn.com/news/emotional-baggage-turns-literal-in-new-animated-short-film-premiered-at-sxsw/" />
-            <PressItem itemWidth={itemWidth} itemHeight={itemHeight} isMobile={isMobile} imgSrc="/press/redcarpetcrash.png" title="Red Carpet Crash" 
+            <PressItem itemWidth={itemWidth} itemHeight={itemHeight} isMobile={isMobile} imgSrc="/press/beyondthecineramadome.jpg" title="Beyond the Cinerama Dome" subtitle="SXSW: Director Lucy Davidson Unpacks Her Baggage" link="https://beyondthecineramadome.com/interviews/sxsw-lucy-davidson-unpacks-her-baggage" />
+            <PressItem itemWidth={itemWidth} itemHeight={itemHeight} isMobile={isMobile} imgSrc="/press/mxdwn.jpg" title="MXDWN" subtitle="Emotional Baggage Turns Literal In New Animated Short Film Premiered At SXSW" link="https://movies.mxdwn.com/news/emotional-baggage-turns-literal-in-new-animated-short-film-premiered-at-sxsw/" />
+            <PressItem itemWidth={itemWidth} itemHeight={itemHeight} isMobile={isMobile} imgSrc="/press/redcarpetcrash.jpg" title="Red Carpet Crash" 
             subtitle="Movie Short Review: ‘Baggage’" link="https://movies.mxdwn.com/news/emotional-baggage-turns-literal-in-new-animated-short-film-premiered-at-sxsw/" />
 
         </div>
