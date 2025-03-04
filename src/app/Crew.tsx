@@ -46,9 +46,12 @@ export const Crew = React.memo(({ disableAnimations, crewRef, height, isMobile }
 
     return <div ref={crewRef} className={isMobile ? styles.crewMobile : styles.crew}>
         <FilmByLucy disableAnimations={disableAnimations} isMobile={isMobile} />
-        <CoreCrew disableAnimations={disableAnimations} isMobile={isMobile} />
         <Cast disableAnimations={disableAnimations} isMobile={isMobile} />
         <CoreCrew2 disableAnimations={disableAnimations} isMobile={isMobile} />
+        <CoreCrew3 disableAnimations={disableAnimations} isMobile={isMobile} />
+        <CoreCrew4 disableAnimations={disableAnimations} isMobile={isMobile} />
+        <CoreCrew5 disableAnimations={disableAnimations} isMobile={isMobile} />
+
     </div>
 });
 
@@ -91,9 +94,9 @@ const FilmByLucy = React.memo(({ disableAnimations, isMobile }: { disableAnimati
     return (
         <div className={isMobile ? styles.crewContentMobile : styles.crewContent}>
             <div ref={containerRef} className={isMobile ? styles.crewSectionJaneMobile : styles.crewSectionJane}>
-                <div className={styles.crewName} >A film by</div>
-                <div className={styles.lucyHeader}>Lucy Davidson</div>
-                <CrewPic disableAnimations={disableAnimations} src={"poster-landscape.jpg"} isMobile={isMobile} />
+                {/* <div className={styles.crewName} >A film by</div>
+                <div className={styles.lucyHeader}>Lucy Davidson</div> */}
+                <CrewPic disableAnimations={disableAnimations} src={"credits/lucy.png"} isMobile={isMobile} />
             </div>
 
 
@@ -106,7 +109,7 @@ type CrewSection = {
     names: string[],
 }
 
-const CrewSection = React.memo(({ disableAnimations, isMobile, sections, mobileImg }: { disableAnimations: boolean, isMobile: boolean, sections: CrewSection[], mobileImg: string }) => {
+const CrewSection = React.memo(({ disableAnimations, isMobile, sections, mobileImg }: { disableAnimations: boolean, isMobile: boolean, sections: CrewSection[], mobileImg?: string }) => {
     const containerRef = React.useRef<HTMLDivElement>(null);
     return (
         <div className={styles.crewContent3}>
@@ -123,7 +126,9 @@ const CrewSection = React.memo(({ disableAnimations, isMobile, sections, mobileI
                         </div>
                     )
                 })}
-                <CrewPic disableAnimations={disableAnimations} src={mobileImg} isMobile={isMobile} />
+                {mobileImg &&
+                    <CrewPic disableAnimations={disableAnimations} src={mobileImg} isMobile={isMobile} />
+                }
             </div>
 
         </div>)
@@ -131,7 +136,7 @@ const CrewSection = React.memo(({ disableAnimations, isMobile, sections, mobileI
 
 const Cast = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
     const crewSections: CrewSection[] = [
-        { header: "Cast", names: ["Eve Eloise Gilbert", "Sophie Schoorman", "Dominik Shields", "Camillo Sancisi"] },
+        { header: "Voice Actors", names: ["Eve Eloise Gilbert", "Sophie Schoorman", "Dominik Shields", "Camillo Sancisi"] },
     ];
     return (
         <div className={styles.crewContent3} >
@@ -141,27 +146,40 @@ const Cast = React.memo(({ disableAnimations, isMobile }: { disableAnimations: b
 })
 
 
-const CoreCrew = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
-    const crewSections: CrewSection[] = [
-        { header: "Director / Animator / Writer", names: ["Lucy Davidson"] },
-
-    ];
-    return (
-        <div className={styles.crewContent3} >
-            <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} sections={crewSections}  mobileImg={"/credits/3.jpg"} />
-        </div>
-    )
-})
-
 const CoreCrew2 = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
 
     const containerRef = React.useRef<HTMLDivElement>(null);
 
     const crewSections: CrewSection[] = [
-        { header: "Producers", names: ["Vanessa Batten"] },
-        { header: "Music", names: ["Alex Olijnyk"] },
-        { header: "Cinematography", names: ["George Milburn"] },
-        { header: "Editing", names: ["Dan Williamson"] }
+        { header: "Producer", names: ["Vanessa Batten"] },
+        { header: "Academy Producers", names: ["Katie Daniels", "Rachel Plant"] },
+        { header: "PA", names: ["Amy Upchurch"] },
+        { header: "HOD Aardman Academy", names: ["Mark Simon Hewis"] },
+        { header: "SM Course Lead", names: ["Stuart Messinger"] },
+    ];
+
+    return (
+        <div className={styles.crewContent3} >
+            <div ref={containerRef} className={styles.crewCol}>
+                <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} mobileImg={"poster-landscape.jpg"} sections={crewSections} />
+
+            </div>
+        </div>
+    )
+})
+
+const CoreCrew3 = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
+
+    const containerRef = React.useRef<HTMLDivElement>(null);
+
+    const crewSections: CrewSection[] = [
+        { header: "Script & Story Development", names: ["Mark Simon Hewis", "Suzie Templeton", "Sam Morrison"] },
+        { header: "Model Making", names: ["Jim Parkyn", "Jack Slade"] },
+        { header: "Rigging", names: ["Rich Modlen"] },
+        { header: "VFX Supervisor ", names: ["Jim Lewis"] },
+        { header: "Editor ", names: ["Dan Williamson"] },
+        { header: "Animation & Directing Supervisor", names: ["Andy Symanowski", "Laurie Sitzia"] },
+
     ];
 
     return (
@@ -174,6 +192,50 @@ const CoreCrew2 = React.memo(({ disableAnimations, isMobile }: { disableAnimatio
     )
 })
 
+const CoreCrew4 = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
+
+    const containerRef = React.useRef<HTMLDivElement>(null);
+
+    const crewSections: CrewSection[] = [
+
+        { header: "Sound Design ", names: ["Anthony Cavalieri"] },
+        { header: "Colour Grade", names: ["Bram Ttwheam"] },
+        { header: "Cinematography & Motion Control", names: ["George Milbun", "Nat Sale"] },
+        { header: "Camera Technician", names: ["Adam Cook", "Adam Hanney"] },
+        { header: "Composer", names: ["Sam Harding", "Alex Olijnyk"] },
+        { header: "Set Builders", names: ["George Milburn", "Tom Sewell"] },
+        { header: "Sound Mix", names: ["Craig Conway"] },
+    ];
+
+    return (
+        <div className={styles.crewContent3} >
+            <div ref={containerRef} className={styles.crewCol}>
+                <CrewSection disableAnimations={disableAnimations} isMobile={isMobile} mobileImg={"/credits/3.jpg"} sections={crewSections} />
+
+            </div>
+        </div>
+    )
+})
+
+const CoreCrew5 = React.memo(({ disableAnimations, isMobile }: { disableAnimations: boolean, isMobile: boolean }) => {
+
+    const containerRef = React.useRef<HTMLDivElement>(null);
+
+    const crewSections: CrewSection[] = [
+
+        { header: "Supported by", names: ["The Ian Potter Cultural Trust", "Hunt & Brew"] },
+        { header: "Produced at", names: ["Aardman Academy"] },
+    ];
+
+    return (
+        <div className={styles.crewContent3} >
+            <div ref={containerRef} className={styles.crewCol}>
+                <CrewSection disableAnimations={disableAnimations} isMobile={isMobile}  sections={crewSections} />
+
+            </div>
+        </div>
+    )
+})
 
 const CrewPic = ({ disableAnimations, src, isMobile }: { disableAnimations: boolean, src: string, isMobile: boolean }) => {
     const containerRef = React.useRef<HTMLDivElement>(null);

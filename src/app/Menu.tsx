@@ -23,9 +23,9 @@ export const Menu = React.memo(({ isMobile, currentItem, updateCurrentSection }:
   else {
     return (
       <div className={styles.menuOuter}>
-        <div>
-          <div onClick={() => updateCurrentSection(0)} className={getMenuItemClass(0)}>
-            <div className={styles.menuText} style={{ fontSize: "25pt" }}>Baggage</div>
+        <div className={styles.menuImageOuter}>
+          <div onClick={() => updateCurrentSection(0)} className={styles.menuImage}>
+          <img src={"menuheader.png"} alt="Baggage" />
           </div>
         </div>
         <div className={styles.menu}>
@@ -46,7 +46,7 @@ export const Menu = React.memo(({ isMobile, currentItem, updateCurrentSection }:
           <div className={styles.contactIcon} onMouseOver={() => { setInstaIcon(GRAY_INSTA) }} onMouseOut={() => { setInstaIcon(BLACK_INSTA) }} onClick={() => { window.open("https://www.instagram.com/lucy_maree_davidson/") }}>
             <img className={styles.contactIconImg} src={instaIcon} alt="link to instagram" />
           </div>
-          <div className={styles.contactIcon} onMouseOver={() => { setLinkedinIcon(GRAY_LINKEDIN) }} onMouseOut={() => { setLinkedinIcon(BLACK_LINKEDIN) }} onClick={() => { window.open("https://www.youtube.com/channel/UCiA4Ft1wfLVMVfWrC1wTzog") }}>
+          <div className={styles.contactIcon} onMouseOver={() => { setLinkedinIcon(GRAY_LINKEDIN) }} onMouseOut={() => { setLinkedinIcon(BLACK_LINKEDIN) }} onClick={() => { window.open("https://www.linkedin.com/in/lucy-maree-davidson/") }}>
             <img className={styles.contactIconImg} src={linkedinIcon} alt="link to linkedin" />
           </div>
         </div>
@@ -70,7 +70,7 @@ const MenuMobile = React.memo(({ currentItem, updateCurrentSection }: { currentI
         <div className={styles.contactIconMenuMobile} onClick={() => { window.open("https://www.instagram.com/lucy_maree_davidson/") }}>
           <img className={styles.contactIconImg} src={BLACK_INSTA} alt="link to instagram" />
         </div>
-        <div className={styles.contactIconMenuMobile} onClick={() => { window.open("https://www.youtube.com/channel/UCiA4Ft1wfLVMVfWrC1wTzog") }}>
+        <div className={styles.contactIconMenuMobile} onClick={() => { window.open("https://www.linkedin.com/in/lucy-maree-davidson/") }}>
           <img className={styles.contactIconImg} src={BLACK_LINKEDIN} alt="link to linkedin" />
         </div>
       </div>
