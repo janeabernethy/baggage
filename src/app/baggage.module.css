@@ -19,6 +19,7 @@
 }
 
 .menuImageOuter {
+  width: 250px;
   height: 100%;
 }
 
@@ -37,6 +38,11 @@
   display: flex;
   gap: 25px;
   height: 100%;
+  align-self: center;
+  transform: translateX(-100px);
+  /* position: absolute;
+  text-align: center;
+  transform: translateX(-50%); */
 
 }
 

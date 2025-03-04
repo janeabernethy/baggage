@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./baggage.module.css";
-
+import gsap from 'gsap';
 
 const BLACK_INSTA = "/socials/insta_black.svg"
 const GRAY_INSTA = "/socials/insta_gray.svg"
@@ -8,10 +8,31 @@ const GRAY_INSTA = "/socials/insta_gray.svg"
 const BLACK_LINKEDIN = "/socials/linkedin_black.svg"
 const GRAY_LINKEDIN = "/socials/linkedin_gray.svg"
 
+
+
 export const Menu = React.memo(({ isMobile, currentItem, updateCurrentSection }: { isMobile: boolean, currentItem: number, updateCurrentSection: (newSection: number) => void }) => {
 
   const [instaIcon, setInstaIcon] = React.useState(BLACK_INSTA);
   const [linkedinIcon, setLinkedinIcon] = React.useState(BLACK_LINKEDIN);
+  const menuImgRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.to(menuImgRef.current, {
+        duration: 0.1,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: menuImgRef.current,
+          start: "top top",
+          end: "10px top",
+          scrub: 0.5,
+        },
+        height: "75px", // Shrink height
+      });
+    });
+
+    return () => ctx.revert(); // Cleanup on unmount
+  }, []);
 
   function getMenuItemClass(index: number) {
     return index === currentItem ? styles.menuItemSelected : styles.menuItem
@@ -22,7 +43,7 @@ export const Menu = React.memo(({ isMobile, currentItem, updateCurrentSection }:
   }
   else {
     return (
-      <div className={styles.menuOuter}>
+      <div ref={menuImgRef} className={styles.menuOuter}>
         <div className={styles.menuImageOuter}>
           <div onClick={() => updateCurrentSection(0)} className={styles.menuImage}>
           <img src={"menuheader.png"} alt="Baggage" />
