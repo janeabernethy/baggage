@@ -85,7 +85,9 @@ const MenuMobile = React.memo(({ currentItem, updateCurrentSection }: { currentI
   return (<div className={styles.menuMobile}>
     <div className={styles.menuMobileTop}>
       <div onClick={() => updateCurrentSection(0)} className={getMenuItemClass(0)}>
-        <div className={styles.menuTextHeaderMobile} >Baggage</div>
+        <div className={styles.menuTextHeaderMobile} >
+          <img style={{height: 40}} src="menuheader.png" alt="Baggage" />
+        </div>
       </div>
       <div className={styles.contactIcons}>
         <div className={styles.contactIconMenuMobile} onClick={() => { window.open("https://www.instagram.com/lucy_maree_davidson/") }}>
