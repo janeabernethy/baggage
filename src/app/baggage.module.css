@@ -197,6 +197,7 @@
 .selectionOuter {
   scroll-margin: 50px;
   position: relative;
+  height: 100%;
   opacity: 0;
   padding: 50px;
   transition: opacity 0.5s ease-in-out;
@@ -233,11 +234,11 @@
 
 .selectionContainer {
   width: 100%;
-  height: calc(100% - 60px);
+  height: 100%;
   /* grid-column-gap: px; */
-  grid-row-gap: 12.5px;
-  padding-top: 50px;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 12.5px;
+  /* padding-top: 50px; */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   display: grid;
   box-sizing: border-box;
 }

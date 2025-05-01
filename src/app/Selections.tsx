@@ -87,6 +87,27 @@ export const Selections = React.memo(({ disableAnimations, isMobile, selectionRe
         <div onClick={() => window.open("https://www.clevelandfilm.org/")} className={styles.selectionImageContainer}>
           <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/cleveland.jpg" : "/laurels/cleveland.jpeg" }/>
         </div>
+        <div onClick={() => window.open("https://cannesindieshortsawards.com/")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/cannes.jpg" : "/laurels/CannesIndie.jpg" }/>
+        </div>
+        <div onClick={() => window.open("https://athensanimfest.eu/")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/athens.jpg" : "/laurels/Athens.jpg" }/>
+        </div>
+        <div onClick={() => window.open("https://www.filmfestivalguild.com/british-animation-film-festival")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/british.jpg" : "/laurels/British.jpg" }/>
+        </div>
+        <div onClick={() => window.open("https://hollywoodshortsfest.com/")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/hollywood.jpg" : "/laurels/Hollywood.jpg" }/>
+        </div>
+        <div onClick={() => window.open("https://miradacorta.com/")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/mirada.jpg" : "/laurels/Mirada.jpg" }/>
+        </div>
+        <div onClick={() => window.open("https://riverrunfilm.com/")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/riverrun.jpg" : "/laurels/RiverRun.jpg" }/>
+        </div>
+        <div onClick={() => window.open("https://www.stkildafilmfestival.com.au/")} className={styles.selectionImageContainer}>
+          <img className={styles.selectionImage} src={isMobile ? "/laurels/mobile/StKilda.jpg" : "/laurels/StKilda.jpg" }/>
+        </div>
 
       </div>
     </div>)
